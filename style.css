@@ -602,3 +602,811 @@ a {
 
 
 
+/* =========================================================
+   DARK THEME – MODERN + GREEN ACCENTS OVERRIDE
+   (place at the very end of style.css)
+   ========================================================= */
+
+:root {
+    --bg-body:        #020617; /* slate-950 */
+    --bg-elevated:    #020617; /* darkest panel */
+    --bg-card:        #020617;
+    --bg-card-soft:   #020617;
+    --accent:         #22c55e; /* green-500 */
+    --accent-soft:    rgba(34, 197, 94, 0.14);
+    --accent-strong:  rgba(34, 197, 94, 0.25);
+    --border-subtle:  #1f2937; /* slate-800 */
+    --border-strong:  #22c55e;
+    --text-main:      #e5e7eb; /* slate-200 */
+    --text-muted:     #94a3b8; /* slate-400 */
+    --text-soft:      #6b7280;
+    --danger:         #ef4444;
+    --danger-soft:    rgba(239, 68, 68, 0.15);
+}
+
+/* Body & overall layout */
+body {
+    background:
+        radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
+    color: var(--text-main);
+    font-family: 'Oswald', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.container {
+    background: linear-gradient(
+        135deg,
+        rgba(34, 197, 94, 0.06),
+        transparent 35%,
+        rgba(8, 47, 73, 0.4)
+    );
+    padding: 1.5em;
+}
+
+/* Main editor window */
+.window {
+    background: radial-gradient(circle at top left, #020617 0, #020617 60%, #020617 100%);
+    border-radius: 1rem;
+    border: 1px solid var(--border-subtle);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(15, 23, 42, 0.8);
+    overflow: hidden;
+}
+
+/* Header */
+#mainheader {
+    color: var(--text-main) !important;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Tabs */
+.tabs {
+    background: linear-gradient(to right, #020617, #020617);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    color: var(--text-muted);
+    padding: 0.4em 0.9em;
+    margin-right: 0.5em;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.tab:hover {
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+.tab.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+/* Left panel – slide-in menu */
+.left-panel {
+    background: #020617;
+    border-right: 1px solid var(--border-subtle);
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.75);
+}
+
+.left-panel h2 {
+    color: var(--text-main);
+}
+
+.left-panel a,
+.left-panel .nav-item {
+    color: var(--text-muted);
+}
+
+.left-panel a:hover,
+.left-panel .nav-item:hover {
+    color: var(--accent);
+}
+
+/* Generic “card” blocks inside the window */
+.level-content,
+.standard-div,
+.competition-div {
+    background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    padding: 0.75em 0.9em;
+    margin-bottom: 0.9em;
+}
+
+/* Per-level background tweaks if needed */
+.level-0-content,
+.level-1-content,
+.level-2-content,
+.level-3-content,
+.level-4-content,
+.level-5-content,
+.level-6-content {
+    background: transparent;
+    color: var(--text-main);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: var(--text-main);
+}
+
+/* Generic buttons */
+button,
+.file-selector button,
+#createbutton,
+.create-button,
+.toggle-button,
+.export-buttons button {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: #020617;
+    border-radius: 999px;
+    border: 1px solid #16a34a;
+    padding: 0.3em 0.9em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow:
+        0 6px 16px rgba(34, 197, 94, 0.35),
+        0 0 0 1px rgba(34, 197, 94, 0.3);
+    transition:
+        background 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.1s ease;
+}
+
+button:hover,
+.file-selector button:hover,
+#createbutton:hover,
+.create-button:hover,
+.toggle-button:hover,
+.export-buttons button:hover {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    box-shadow:
+        0 10px 26px rgba(34, 197, 94, 0.45),
+        0 0 0 1px rgba(34, 197, 94, 0.4);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow:
+        0 3px 10px rgba(34, 197, 94, 0.3),
+        0 0 0 1px rgba(34, 197, 94, 0.4);
+}
+
+/* Secondary / subtle buttons (like “Create New Setting”) */
+.create-button,
+.add-compobj-container button {
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--accent);
+    border: 1px solid var(--border-subtle);
+    box-shadow: none;
+}
+
+.create-button:hover,
+.add-compobj-container button:hover {
+    background: rgba(15, 23, 42, 1);
+    border-color: var(--accent);
+}
+
+/* Inputs & selects */
+input[type="text"],
+input[type="number"],
+select,
+textarea,
+.add-compobj-input {
+    background: #020617;
+    color: var(--text-main);
+    border-radius: 0.6rem;
+    border: 1px solid var(--border-subtle);
+    padding: 0.25em 0.6em;
+    font-size: 0.8rem;
+    outline: none;
+    transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus,
+.add-compobj-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+    background: #020617;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-soft);
+}
+
+/* File selector */
+.file-selector {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75);
+}
+
+/* Table styling */
+.window-tables {
+    background: transparent;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.75rem;
+}
+
+.window-tables th,
+.window-tables td {
+    background: #020617;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    padding: 0.25em 0.4em;
+}
+
+.window-tables th {
+    background: rgba(15, 23, 42, 0.95);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.window-tables tr:nth-child(even) td {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.window-tables tr:hover td {
+    background: rgba(22, 163, 74, 0.1);
+}
+
+/* Competition list items */
+.competition-item {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 0.6rem;
+    margin-bottom: 0.3em;
+    padding: 0.25em 0.45em;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, border 0.15s ease, transform 0.1s ease;
+}
+
+.competition-item:hover {
+    background: rgba(15, 23, 42, 1);
+    border-color: rgba(34, 197, 94, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Little icons (⊖ ⧉ ⇄) */
+.competition-item .delete-button,
+.competition-item .duplicate-button,
+.competition-item .move-button {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    transition: color 0.1s ease, opacity 0.1s ease, transform 0.08s ease;
+}
+
+.competition-item .delete-button {
+    color: var(--danger);
+}
+
+.competition-item .duplicate-button {
+    color: var(--accent);
+}
+
+.competition-item .move-button {
+    color: #38bdf8; /* cyan accent */
+}
+
+.competition-item .delete-button:hover,
+.competition-item .duplicate-button:hover,
+.competition-item .move-button:hover {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* Init Teams / Settings / other sub-panels titles */
+.standard-div h2,
+.level-content h2 {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.25em;
+    margin-bottom: 0.4em;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Scrollbars (modern, subtle) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #020617;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #020617;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* =========================================================
+   SIDE MENU + BROWN CLEANUP OVERRIDES
+   ========================================================= */
+
+/* Generic text/table cleanup (kill brown) */
+td,
+th {
+    color: var(--text-main);
+    background: transparent;
+}
+
+/* Inputs/selects: ensure we override brown version */
+input,
+select {
+    background: #020617;
+    color: var(--text-main);
+    border-radius: 0.6rem;
+    border: 1px solid var(--border-subtle);
+    font-weight: 400;
+    text-align: left;
+    padding: 0.25em 0.6em;
+}
+
+/* =========================================================
+   SIDE MENU – hierarchy cards (Confeds / Nations / Comps)
+   ========================================================= */
+
+.level-container {
+    margin-bottom: 0.5em;
+}
+
+.level-header {
+    cursor: pointer;
+    padding: 0.5em 0.7em;
+    background: radial-gradient(circle at top left, #020617 0, #020617 65%, #020617 100%);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.18s ease, border 0.18s ease, transform 0.08s ease;
+}
+
+.level-header:hover {
+    background: rgba(15, 23, 42, 1);
+    border-color: rgba(34, 197, 94, 0.5);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.level-list {
+    margin-top: 0.3em;
+}
+
+/* Level items as modern “pills” with subtle left accent */
+.level-list li {
+    padding: 0.28em 0.55em;
+    margin-bottom: 0.16em;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    border: 1px solid transparent;
+    background: rgba(15, 23, 42, 0.95);
+    color: var(--text-main);
+    font-size: 0.78rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35em;
+    position: relative;
+    transition: background 0.15s ease, border 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.level-list li::before {
+    content: "";
+    width: 3px;
+    height: 70%;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.8);
+    position: absolute;
+    left: 4px;
+}
+
+.level-list li:hover {
+    background: rgba(15, 23, 42, 1);
+    border-color: rgba(34, 197, 94, 0.4);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Level-specific accent colors on the left bar */
+.level-0 {
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+.level-0::before {
+    background: #22c55e;
+}
+
+.level-1 {
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+.level-1::before {
+    background: #38bdf8;
+}
+
+.level-2 {
+    background-color: transparent;
+    font-size: 0.76rem;
+}
+.level-2::before {
+    background: #eab308;
+}
+
+.level-3 {
+    background-color: transparent;
+    font-size: 0.76rem;
+}
+.level-3::before {
+    background: #a855f7;
+}
+
+.level-4 {
+    background-color: transparent;
+    font-size: 0.72rem;
+}
+.level-4::before {
+    background: #f97316;
+}
+
+.level-5 {
+    background-color: transparent;
+    font-size: 0.7rem;
+}
+.level-5::before {
+    background: #ec4899;
+}
+
+.level-6 {
+    background-color: transparent;
+    font-size: 0.68rem;
+}
+.level-6::before {
+    background: #64748b;
+}
+
+/* Remove old solid color backgrounds for content panes */
+.level-0-content,
+.level-1-content,
+.level-2-content,
+.level-3-content,
+.level-4-content,
+.level-5-content,
+.level-6-content {
+    background: transparent;
+    color: var(--text-main);
+}
+
+/* =========================================================
+   OTHER BROWN ELEMENTS CLEANUP
+   ========================================================= */
+
+/* Tables that are not caught by window-tables override */
+.groupedtables {
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.groupedtables th,
+.groupedtables td {
+    border: 1px solid var(--border-subtle);
+    background: #020617;
+    color: var(--text-main);
+}
+
+/* Task container */
+.task-container {
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    background: rgba(15, 23, 42, 0.9);
+}
+
+/* Message modal */
+.message-modal.info {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: var(--text-main);
+}
+.message-modal.error {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: var(--text-main);
+}
+
+/* Download button */
+.download-button {
+    background-color: rgba(15, 23, 42, 0.9);
+    color: var(--accent);
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+}
+.download-button:hover {
+    background-color: rgba(15, 23, 42, 1);
+    border-color: var(--accent);
+}
+
+/* Left / right window borders */
+.window-left,
+.window-right {
+    border: 1px solid var(--border-subtle);
+}
+
+/* =========================================================
+   FINAL DARK CLEANUP – TABLES, WEATHER / SETTINGS, SIDE MENU
+   ========================================================= */
+
+/* Fix brown first-column cells (Settings, Weather, InitTeams, etc.) */
+.window-tables tr td:first-child {
+    font-weight: 600;
+    background: #020617;               /* same dark base */
+    color: var(--text-main);
+}
+
+/* Grouped tables (if used in tasks/advancement/etc.) */
+.groupedtables {
+    margin-bottom: 0.4375em;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.groupedtables th,
+.groupedtables td {
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    background: #020617;
+}
+
+/* Explicitly force Settings / Weather “cards” to dark look */
+#settings,
+#weather {
+    background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%) !important;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+}
+
+/* =========================================================
+   SIDE MENU — LEVEL CARDS WITH CLEAR DIFFERENTIATION
+   ========================================================= */
+
+/* Base style for all hierarchy levels in side menu */
+.level-0,
+.level-1,
+.level-2,
+.level-3,
+.level-4,
+.level-5,
+.level-6 {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-radius: 0.6rem;
+    margin-right: 0.4375em;
+    margin-bottom: 0.2em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.08s ease;
+}
+
+/* Level-specific accents so they don’t all look the same */
+.level-0 {
+    border-color: rgba(34, 197, 94, 0.8);  /* green – confederations */
+    box-shadow: 0 8px 22px rgba(34, 197, 94, 0.3);
+}
+.level-0:hover {
+    background: rgba(15, 23, 42, 1);
+    border-color: rgba(34, 197, 94, 1);
+    transform: translateY(-1px);
+}
+
+.level-1 {
+    border-left: 4px solid #38bdf8;        /* cyan – nations group */
+}
+.level-1:hover {
+    background: rgba(15, 23, 42, 1);
+    box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
+    border-color: rgba(56, 189, 248, 0.8);
+}
+
+.level-2 {
+    border-left: 4px solid #eab308;        /* yellow – individual nation */
+}
+.level-2:hover {
+    background: rgba(15, 23, 42, 1);
+    box-shadow: 0 6px 16px rgba(234, 179, 8, 0.35);
+    border-color: rgba(234, 179, 8, 0.8);
+}
+
+.level-3 {
+    border-left: 4px solid #a855f7;        /* purple – competition */
+}
+.level-3:hover {
+    background: rgba(15, 23, 42, 1);
+    box-shadow: 0 6px 16px rgba(168, 85, 247, 0.35);
+    border-color: rgba(168, 85, 247, 0.8);
+}
+
+.level-4 {
+    border-left: 4px solid #f97316;        /* orange – stage */
+}
+.level-4:hover {
+    background: rgba(15, 23, 42, 1);
+    box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
+    border-color: rgba(249, 115, 22, 0.8);
+}
+
+.level-5 {
+    border-left: 4px solid #ec4899;        /* pink – group */
+}
+.level-5:hover {
+    background: rgba(15, 23, 42, 1);
+    box-shadow: 0 6px 16px rgba(236, 72, 153, 0.35);
+    border-color: rgba(236, 72, 153, 0.8);
+}
+
+.level-6 {
+    border-left: 4px solid #64748b;        /* slate – deepest level */
+}
+.level-6:hover {
+    background: rgba(15, 23, 42, 1);
+    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.4);
+    border-color: rgba(100, 116, 139, 0.9);
+}
+
+/* Keep list items inside the left menu neat */
+#competitionList li {
+    list-style: none;
+}
+
+/* Slight color tweak for any “selected” item if you use such a class */
+#competitionList li.active,
+#competitionList li.selected {
+    background: rgba(34, 197, 94, 0.16) !important;
+    border-color: rgba(34, 197, 94, 0.9) !important;
+}
+/* =========================================================
+   SIDEBAR TREE LAYOUT FIX + LEVEL COLORS
+   (keeps cascade / nesting but with clearer cards)
+   ========================================================= */
+
+/* Reset the heavy card styling for level classes in the sidebar
+   and turn them into indented tree items again */
+#competitionList li {
+    list-style: none;
+    padding: 0.18rem 0.55rem;
+    margin-bottom: 0.12rem;
+    border-radius: 0.5rem;
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--text-main);
+    border: 1px solid transparent;
+    font-size: 0.78rem;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.08s ease;
+}
+
+/* Hover / active look */
+#competitionList li:hover {
+    background: rgba(15, 23, 42, 1);
+    border-color: rgba(148, 163, 184, 0.5);
+    transform: translateY(-1px);
+}
+
+#competitionList li.active,
+#competitionList li.selected {
+    background: rgba(34, 197, 94, 0.16) !important;
+    border-color: rgba(34, 197, 94, 0.9) !important;
+}
+
+/* Indentation per level – keep the cascade look */
+#competitionList li.level-0 { margin-left: 0rem;   font-size: 0.8rem;  }
+#competitionList li.level-1 { margin-left: 0.4rem; font-size: 0.8rem;  }
+#competitionList li.level-2 { margin-left: 0.8rem; font-size: 0.78rem; }
+#competitionList li.level-3 { margin-left: 1.2rem; font-size: 0.78rem; }
+#competitionList li.level-4 { margin-left: 1.6rem; font-size: 0.76rem; }
+#competitionList li.level-5 { margin-left: 2.0rem; font-size: 0.74rem; }
+#competitionList li.level-6 { margin-left: 2.4rem; font-size: 0.72rem; }
+
+/* Colored vertical accent per level */
+#competitionList li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    border-radius: 999px;
+    background: #4b5563;
+}
+
+#competitionList li.level-0::before { background: #22c55e; } /* Confeds */
+#competitionList li.level-1::before { background: #38bdf8; } /* Continent/group */
+#competitionList li.level-2::before { background: #eab308; } /* Nation       */
+#competitionList li.level-3::before { background: #a855f7; } /* Competition  */
+#competitionList li.level-4::before { background: #f97316; } /* Stage        */
+#competitionList li.level-5::before { background: #ec4899; } /* Group        */
+#competitionList li.level-6::before { background: #64748b; } /* Deeper nodes */
+
+/* Slightly stronger card feel for top level (confeds) */
+#competitionList li.level-0 {
+    border-color: rgba(34, 197, 94, 0.6);
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.25);
+}
+
+/* Make sure nested UL keep some left padding for the tree effect */
+#competitionList ul {
+    padding-left: 0.2rem;
+    margin-left: 0;
+}
+
+/* ============================================
+   SIDEBAR TREE – TIGHTER INDENT SO TEXT FITS
+   ============================================ */
+
+/* Give text a bit more usable width */
+#competitionList li {
+    padding: 0.16rem 0.45rem 0.16rem 0.85rem; /* less side padding, more room */
+    font-size: 0.75rem;                       /* tiny shrink to avoid wrapping */
+}
+
+/* Smaller indentation per level (was 0.4 / 0.8 / 1.2 / ...) */
+#competitionList li.level-0 { margin-left: 0.00rem; }
+#competitionList li.level-1 { margin-left: 0.25rem; }
+#competitionList li.level-2 { margin-left: 0.50rem; }
+#competitionList li.level-3 { margin-left: 0.75rem; }
+#competitionList li.level-4 { margin-left: 1.00rem; }
+#competitionList li.level-5 { margin-left: 1.25rem; }
+#competitionList li.level-6 { margin-left: 1.50rem; }
+
+/* Move the colored bar slightly closer so it doesn’t steal width */
+#competitionList li::before {
+    left: 3px;
+}

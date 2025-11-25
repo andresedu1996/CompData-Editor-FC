@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compdata Editor - Eshortx and Scyppan for FIFA</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="leftpanel.js" defer></script>
+    <script src="data.js" defer></script>
+    <script src="defaults.js" defer></script>
+    <script src="details.js" defer></script>
+    <script src="hierarchy.js" defer></script>
+    <script src="helper.js" defer></script>
+    <script src="initteamswindow.js" defer></script>
+    <script src="windows.js" defer></script>
+    <script src="taskswindow.js" defer></script>
+    <script src="advancementwindow.js" defer></script>
+    <script src="competitionswindow.js" defer></script>
+    <script src="objectiveswindow.js" defer></script>
+    <script src="settingswindow.js" defer></script>
+    <script src="schedulewindow.js" defer></script>
+    <script src="standingswindow.js" defer></script>
+    <script src="weatherwindow.js" defer></script>
+    <script src="compobj.js" defer></script>
+    <script src="messages.js" defer></script>
+    <script src="output.js" defer></script>
+    <script src="main.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="file-selector" id="fileSelector">
+            <label for="fileSelect" class="custom-file-upload">Click to Upload your JSON file</label>
+            <input type="file" id="fileSelect" accept=".json">
+            <br>
+            <div id="helper-text">
+                Before using this tool, you must have done all of the following:
+                <ol>
+                    <li>Export all your compdata files using the FIFA Editor Tool.</li>
+                    <li>Use the <a href='https://github.com/Eshortx/compdata-jsonmaker-fc25/tree/main'>scyppan json maker tool</a> to create a combined JSON file.</li>
+                    <li>Export the newly created JSON file.</li>
+                    <li>Import the JSON file into this tool.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="left-panel" id="leftPanel">
+            <h2>Competitions 
+                <button class="download-button" id="downloadButton" title="Download Competitions" onclick='download()'>⇓</button>
+            </h2>
+            <div class="competition-list">
+                <ul id="competitionList"></ul>
+            </div>
+        </div>
+        
+        <div class="main-panel" id="mainPanel">
+            <h1 id="mainheader">Compdata Editor</h1>
+<br>
+
+            <div id="fileContent" class="file-content">
+            <div id="level-0-content" class="level-0-content hidden"><p>Welcome to the Eshortx and Scyppan Compdata Editor!</p>
+<p>Would you like to join our community?</p>
+<p>
+  <strong>Eshortx:</strong> <a href="https://discord.gg/SMr5w38yh9" target="_blank">Join Eshortx on Discord</a>
+</p>
+<p>
+  <strong>Scyppan:</strong> <a href="https://discord.com/invite/phWWVHff" target="_blank">Join Scyppan on Discord</a>
+</p>
+</div>
+            <div id="level-1-content" class="level-1-content hidden">lvl1</div>
+            <div id="level-2-content" class="level-2-content hidden">lvl2</div>
+            <div id="level-3-content" class="level-3-content hidden">lvl3</div>
+            <div id="level-4-content" class="level-4-content hidden">lvl4</div>
+            <div id="level-5-content" class="level-5-content hidden">lvl5</div>
+            <div id="level-6-content" class="level-6-content hidden">lvl6???!!!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

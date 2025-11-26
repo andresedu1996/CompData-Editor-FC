@@ -230,6 +230,15 @@ function addSettingRow(setting, tbody) {
     const valueCell = document.createElement('td');
     valueCell.classList.add('tablevalue');
 
+    const selectWrapper = document.createElement('div');
+    selectWrapper.classList.add('settingsselect-wrapper');
+
+    const selectFilter = document.createElement('input');
+    selectFilter.type = 'text';
+    selectFilter.classList.add('settingsselect-filter');
+    selectFilter.placeholder = 'Type to filter settings';
+    selectFilter.value = setting.tag || '';
+
     const select = document.createElement('select');
     select.classList.add('settingsselect');
     select.dataset.key = 'tag'; // Ensure this is set for duplicate checking
@@ -245,9 +254,16 @@ function addSettingRow(setting, tbody) {
 
     // Event listener for tag change
     select.addEventListener('change', function () {
-        
+
+        selectFilter.value = select.value;
+        select.dataset.localQuery = selectFilter.value;
         setting.tag = select.value;  // Update the local variable to reflect the change
         handleSettingTagChange(setting, input);
+    });
+
+    selectFilter.addEventListener('input', function () {
+        select.dataset.localQuery = selectFilter.value;
+        populateSelectOptions(select, select.value, selectFilter.value);
     });
 
     // Event listener for value change
@@ -260,7 +276,7 @@ function addSettingRow(setting, tbody) {
         }
     });
 
-    tagCell.appendChild(select);
+    tagCell.appendChild(selectWrapper);
     valueCell.appendChild(input);
     row.appendChild(tagCell);
     row.appendChild(valueCell);

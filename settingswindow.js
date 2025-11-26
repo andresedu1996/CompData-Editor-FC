@@ -45,62 +45,6 @@ const options = [
     'second_transfer_window'
 ];
 
-let settingsFilterQuery = '';
-
-function sortOptionsWithQuery(query) {
-
-    const lowerQuery = query.trim().toLowerCase();
-
-    return [...options].sort((a, b) => {
-        const scoreA = optionScore(a, lowerQuery);
-        const scoreB = optionScore(b, lowerQuery);
-
-        if (scoreA !== scoreB) return scoreA - scoreB;
-        return a.localeCompare(b);
-    });
-}
-
-function optionScore(option, query) {
-
-    if (!query) return 0;
-
-    const lowerOption = option.toLowerCase();
-
-    if (lowerOption.startsWith(query)) return 0;
-
-    const index = lowerOption.indexOf(query);
-
-    if (index !== -1) return 1 + index;
-
-    return 1000;
-}
-
-function populateSelectOptions(select, selectedValue) {
-
-    const sortedOptions = sortOptionsWithQuery(settingsFilterQuery);
-
-    select.innerHTML = '';
-
-    sortedOptions.forEach(option => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        if (option === selectedValue) optionElement.selected = true;
-        select.appendChild(optionElement);
-    });
-}
-
-function applySettingsSort(query, container) {
-
-    settingsFilterQuery = query;
-
-    const selects = container.querySelectorAll('select.settingsselect');
-
-    selects.forEach(select => {
-        populateSelectOptions(select, select.value);
-    });
-}
-
 
 
 function createSettingsDiv(competitionid) {
@@ -126,42 +70,6 @@ function createSettingsDiv(competitionid) {
         addSettingRow(setting, tbody);
     });
 
-    applySettingsSort('', tbody);
-
-    const controlsContainer = document.createElement('div');
-    controlsContainer.classList.add('settings-controls');
-
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.placeholder = 'Search settings...';
-    searchInput.addEventListener('input', function () {
-        applySettingsSort(searchInput.value, tbody);
-    });
-    controlsContainer.appendChild(searchInput);
-
-    const cloneButton = document.createElement('button');
-    cloneButton.textContent = 'Clone Last Setting';
-    cloneButton.disabled = settingsData.length === 0;
-    cloneButton.addEventListener('click', function () {
-        const competitionSettings = data['settings'].filter(entry => entry.id == competitionid);
-        const lastSetting = competitionSettings[competitionSettings.length - 1];
-
-        if (!lastSetting) return;
-
-        const clonedSetting = {
-            id: competitionid,
-            tag: lastSetting.tag,
-            value: lastSetting.value
-        };
-
-        data['settings'].push(clonedSetting);
-        data['settings'].sort((a, b) => a.id - b.id);
-
-        addSettingRow(clonedSetting, tbody);
-        applySettingsSort(searchInput.value, tbody);
-        cloneButton.disabled = false;
-    });
-
     // "Create New Setting" button (unchanged)
     const usedTags = settingsData.map(setting => setting.tag);
     const availableOptions = options.filter(option => !usedTags.includes(option));
@@ -174,18 +82,13 @@ function createSettingsDiv(competitionid) {
             const selectedOption = availableOptions.splice(randomIndex, 1)[0];
             let newSetting = createNewSettingData(competitionid, selectedOption);
             addSettingRow(newSetting, tbody);
-            applySettingsSort(searchInput.value, tbody);
-            cloneButton.disabled = false;
 
             if (availableOptions.length === 0) {
                 createButton.disabled = true;
             }
         });
-        controlsContainer.appendChild(createButton);
+        div.appendChild(createButton);
     }
-    controlsContainer.appendChild(cloneButton);
-
-    div.appendChild(controlsContainer);
 
     // 🔹 NEW: embed Init Teams inside the Settings window
     if (typeof createInitTeamsDiv === 'function' && data && Array.isArray(data['initteams'])) {
@@ -230,21 +133,18 @@ function addSettingRow(setting, tbody) {
     const valueCell = document.createElement('td');
     valueCell.classList.add('tablevalue');
 
-    const selectWrapper = document.createElement('div');
-    selectWrapper.classList.add('settingsselect-wrapper');
-
-    const selectFilter = document.createElement('input');
-    selectFilter.type = 'text';
-    selectFilter.classList.add('settingsselect-filter');
-    selectFilter.placeholder = 'Type to filter settings';
-    selectFilter.value = setting.tag || '';
-
     const select = document.createElement('select');
     select.classList.add('settingsselect');
     select.dataset.key = 'tag'; // Ensure this is set for duplicate checking
 
     // Populate the select options
-    populateSelectOptions(select, setting.tag);
+    options.forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.textContent = option;
+        if (option === setting.tag) optionElement.selected = true;
+        select.appendChild(optionElement);
+    });
 
     const input = document.createElement('input');
     input.type = textTags.includes(setting.tag) ? 'text' : 'number';
@@ -254,16 +154,9 @@ function addSettingRow(setting, tbody) {
 
     // Event listener for tag change
     select.addEventListener('change', function () {
-
-        selectFilter.value = select.value;
-        select.dataset.localQuery = selectFilter.value;
+        
         setting.tag = select.value;  // Update the local variable to reflect the change
         handleSettingTagChange(setting, input);
-    });
-
-    selectFilter.addEventListener('input', function () {
-        select.dataset.localQuery = selectFilter.value;
-        populateSelectOptions(select, select.value, selectFilter.value);
     });
 
     // Event listener for value change
@@ -276,7 +169,7 @@ function addSettingRow(setting, tbody) {
         }
     });
 
-    tagCell.appendChild(selectWrapper);
+    tagCell.appendChild(select);
     valueCell.appendChild(input);
     row.appendChild(tagCell);
     row.appendChild(valueCell);

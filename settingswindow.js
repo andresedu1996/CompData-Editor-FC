@@ -49,31 +49,6 @@ const selectTypeBuffer = new Map();
 const selectTypeResetTimers = new Map();
 const TYPEAHEAD_RESET_MS = 800;
 
-function handleTypeaheadKey(select, event) {
-    const key = event.key;
-    const isCharacter = key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey;
-
-    if (isCharacter) {
-        const newQuery = (selectTypeBuffer.get(select) || '') + key.toLowerCase();
-        selectTypeBuffer.set(select, newQuery);
-        populateSelectOptions(select, select.value, newQuery);
-        scheduleTypeaheadReset(select);
-        select.focus({ preventScroll: true });
-        event.preventDefault();
-    } else if (key === 'Backspace') {
-        const currentQuery = selectTypeBuffer.get(select) || '';
-        const updatedQuery = currentQuery.slice(0, -1);
-        selectTypeBuffer.set(select, updatedQuery);
-        populateSelectOptions(select, select.value, updatedQuery);
-        scheduleTypeaheadReset(select);
-        select.focus({ preventScroll: true });
-        event.preventDefault();
-    } else if (key === 'Escape') {
-        resetTypeahead(select);
-        populateSelectOptions(select, select.value);
-    }
-}
-
 function sortOptionsWithQuery(query) {
     const lowerQuery = query.trim().toLowerCase();
 
@@ -261,13 +236,26 @@ function addSettingRow(setting, tbody) {
     });
 
     select.addEventListener('keydown', function (event) {
-        handleTypeaheadKey(select, event);
-    });
+        const key = event.key;
+        const isCharacter = key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey;
 
-    // Some browsers don't bubble character keys to keydown while the dropdown is open,
-    // so also listen on keypress to keep collecting multi-character queries.
-    select.addEventListener('keypress', function (event) {
-        handleTypeaheadKey(select, event);
+        if (isCharacter) {
+            const newQuery = (selectTypeBuffer.get(select) || '') + key.toLowerCase();
+            selectTypeBuffer.set(select, newQuery);
+            populateSelectOptions(select, select.value, newQuery);
+            scheduleTypeaheadReset(select);
+            event.preventDefault();
+        } else if (key === 'Backspace') {
+            const currentQuery = selectTypeBuffer.get(select) || '';
+            const updatedQuery = currentQuery.slice(0, -1);
+            selectTypeBuffer.set(select, updatedQuery);
+            populateSelectOptions(select, select.value, updatedQuery);
+            scheduleTypeaheadReset(select);
+            event.preventDefault();
+        } else if (key === 'Escape') {
+            resetTypeahead(select);
+            populateSelectOptions(select, select.value);
+        }
     });
 
     select.addEventListener('blur', function () {

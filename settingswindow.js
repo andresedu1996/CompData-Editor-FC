@@ -75,10 +75,9 @@ function optionScore(option, query) {
     return 1000;
 }
 
-function populateSelectOptions(select, selectedValue, localQuery = '') {
+function populateSelectOptions(select, selectedValue) {
 
-    const effectiveQuery = localQuery || settingsFilterQuery;
-    const sortedOptions = sortOptionsWithQuery(effectiveQuery);
+    const sortedOptions = sortOptionsWithQuery(settingsFilterQuery);
 
     select.innerHTML = '';
 
@@ -98,8 +97,7 @@ function applySettingsSort(query, container) {
     const selects = container.querySelectorAll('select.settingsselect');
 
     selects.forEach(select => {
-        const localQuery = select.dataset.localQuery || '';
-        populateSelectOptions(select, select.value, localQuery);
+        populateSelectOptions(select, select.value);
     });
 }
 
@@ -246,11 +244,7 @@ function addSettingRow(setting, tbody) {
     select.dataset.key = 'tag'; // Ensure this is set for duplicate checking
 
     // Populate the select options
-    populateSelectOptions(select, setting.tag, selectFilter.value);
-    select.dataset.localQuery = selectFilter.value;
-
-    selectWrapper.appendChild(selectFilter);
-    selectWrapper.appendChild(select);
+    populateSelectOptions(select, setting.tag);
 
     const input = document.createElement('input');
     input.type = textTags.includes(setting.tag) ? 'text' : 'number';

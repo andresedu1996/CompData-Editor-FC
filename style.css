@@ -1152,7 +1152,10 @@ select {
 /* Download button */
 .download-button {
     background-color: rgba(15, 23, 42, 0.9);
-    color: var(--accent);
+    font-size: 1em;
+    text-align: center;
+    line-height: 1em;
+    color: var(--text-main);
     border-radius: 999px;
     border: 1px solid var(--border-subtle);
 }
@@ -1217,6 +1220,8 @@ select {
     border-radius: 0.6rem;
     margin-right: 0.4375em;
     margin-bottom: 0.2em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
     border: 1px solid var(--border-subtle);
@@ -1249,6 +1254,7 @@ select {
     background: rgba(15, 23, 42, 1);
     box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
     border-color: rgba(56, 189, 248, 0.8);
+    padding-left: 0.22em;
 }
 
 .level-2 {
@@ -1399,14 +1405,25 @@ select {
 
 /* Smaller indentation per level (was 0.4 / 0.8 / 1.2 / ...) */
 #competitionList li.level-0 { margin-left: 0.00rem; }
-#competitionList li.level-1 { margin-left: 0.25rem; }
-#competitionList li.level-2 { margin-left: 0.50rem; }
-#competitionList li.level-3 { margin-left: 0.75rem; }
-#competitionList li.level-4 { margin-left: 1.00rem; }
-#competitionList li.level-5 { margin-left: 1.25rem; }
+#competitionList li.level-1 { margin-left: 0.10rem; }
+#competitionList li.level-2 { margin-left: 0.15rem; }
+#competitionList li.level-3 { margin-left: 0.25rem; }
+#competitionList li.level-4 { margin-left: 0.30rem; }
+#competitionList li.level-5 { margin-left: 0.80rem; }
 #competitionList li.level-6 { margin-left: 1.50rem; }
 
 /* Move the colored bar slightly closer so it doesn’t steal width */
 #competitionList li::before {
     left: 3px;
+}
+
+
+/* Sidebar tree – small spacing tweak so text isn't on top of the color bar */
+#competitionList li {
+    padding: 0.16rem 0.45rem 0.16rem 1.15rem;  /* 🔼 a bit more left padding */
+}
+
+/* Keep the bar close to the edge so it doesn't steal text width */
+#competitionList li::before {
+    left: 5px;
 }

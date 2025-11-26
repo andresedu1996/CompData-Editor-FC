@@ -560,6 +560,31 @@ function generateAutoSchedule(compLine, config) {
         });
     }
 
+ // 🟢 DÍAS PROTEGIDOS ALREDEDOR DE COMPETICIONES CONTINENTALES
+    // UEFA: 223, 224, 226, 232, 227 (femenino)
+    // CONMEBOL: 1003, 1014, 1015
+    // AFC: 3005
+    const CONTINENTAL_COMP_IDS = new Set([
+        223, 224, 226, 232, 227,
+        1003, 1014, 1015,
+        3005
+    ]);
+
+    // set de días a evitar: día del partido continental ± 2 días (deja al menos 3 días de separación)
+    const protectedDaysAroundContinental = new Set();
+    data['schedule'].forEach(entry => {
+        if (!CONTINENTAL_COMP_IDS.has(entry.id)) return;
+        const baseDay = entry.day;
+        if (!baseDay) return;
+
+        for (let offset = -2; offset <= 2; offset++) {
+            const d = baseDay + offset;
+            if (d >= 1 && d <= 366) {
+                protectedDaysAroundContinental.add(d);
+            }
+        }
+    });
+
     // Default times we’ll use for generated matches
     const defaultTimes = [1755, 2000];  // general slots
     const finalRunTimes = [2000];       // last 3 rounds all same time
@@ -587,29 +612,42 @@ function generateAutoSchedule(compLine, config) {
         if (dateIndex >= allowedDates.length) break;
 
         // Decide which times to use for this round
-        const isFinalRunIn = (type === 'League') && rounds >= 3 && (round > rounds - 3);
-        const timesThisRound = isFinalRunIn ? finalRunTimes : defaultTimes;
+         const isFinalRunIn = (type === 'League') && rounds >= 3 && (round > rounds - 3);
+    const timesThisRound = isFinalRunIn ? finalRunTimes : defaultTimes;
 
-        let chosenDate = allowedDates[dateIndex];
+    let chosenDate = allowedDates[dateIndex];
 
-        // Adjust to avoid clash if needed
-        if (avoidClashes) {
-            let attempts = 0;
-            while (attempts < allowedDates.length) {
-                const dayTmp = dayOfYearFromDate(chosenDate);
-                const hasClash = timesThisRound.some(time =>
+    // Ajuste para evitar choques y días cercanos a competiciones continentales
+    if (avoidClashes) {
+        let attempts = 0;
+        while (attempts < allowedDates.length) {
+            const dayTmp = dayOfYearFromDate(chosenDate);
+            let clashFound = false;
+
+            // 1) Evitar días demasiado cercanos a competiciones continentales (±2 días)
+            if (protectedDaysAroundContinental.has(dayTmp)) {
+                clashFound = true;
+            }
+
+            // 2) Evitar choques exactos con otros partidos de la misma nación (validación que ya tenías)
+            if (!clashFound) {
+                clashFound = timesThisRound.some(time =>
                     clashSet.has(dayTmp + ':' + time)
                 );
-                if (!hasClash) break;
-
-                // try next allowed date
-                dateIndex++;
-                if (dateIndex >= allowedDates.length) break;
-                chosenDate = allowedDates[dateIndex];
-                attempts++;
             }
+
+            // Si no hay choques ni está demasiado cerca, usamos esta fecha
+            if (!clashFound) break;
+
+            // Probar la siguiente fecha permitida
+            dateIndex++;
             if (dateIndex >= allowedDates.length) break;
+            chosenDate = allowedDates[dateIndex];
+            attempts++;
         }
+
+        if (dateIndex >= allowedDates.length) break;
+    }
 
         const day = dayOfYearFromDate(chosenDate);
 

@@ -71,6 +71,7 @@ input, select {
 .competition-list {
     overflow-y: auto;
     flex-grow: 1;
+    padding-right: 1rem; /* keep toggles clear of scrollbar */
 }
 
 .main-panel {
@@ -397,7 +398,8 @@ input[type="file"] {
 }
 
 .left-panel {
-    width: 15%;
+    width: 18%;
+    min-width: 240px;
     background: #1a1a1a;
     color: #e2e2e2;
     padding: 1.25em;
@@ -863,6 +865,53 @@ textarea::placeholder {
     background: #6b7280;
 }
 
+/* Download action button */
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: #020617;
+    border: 1px solid #16a34a;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow:
+        0 8px 18px rgba(34, 197, 94, 0.32),
+        0 0 0 1px rgba(34, 197, 94, 0.35);
+    text-transform: uppercase;
+}
+
+.download-button:hover {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: #020617;
+    border-color: #22c55e;
+    box-shadow:
+        0 12px 26px rgba(34, 197, 94, 0.4),
+        0 0 0 1px rgba(34, 197, 94, 0.4);
+    transform: translateY(-1px);
+}
+
+.download-button:active {
+    transform: translateY(0);
+}
+
+.download-pill {
+    margin: 0 0 0.75rem 0;
+}
+
+.download-icon {
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.download-label {
+    font-size: 0.82rem;
+}
+
 /* =========================================================
    SCHEDULE WINDOW CONTROLS
    ========================================================= */
@@ -1035,4 +1084,53 @@ textarea::placeholder {
 #competitionList ul {
     padding-left: 0.15rem;
     margin: 0;
+}
+
+/* Tree row layout */
+.competition-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+    min-height: 1.9rem;
+    position: relative;
+    padding-right: 2.3rem; /* reserve space for toggle to avoid overlap */
+}
+
+.competition-name {
+    flex: 1;
+    min-width: 0;
+    padding-right: 0.4rem;
+}
+
+.tree-toggle {
+    position: absolute;
+    right: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--accent);
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.08s ease, color 0.15s ease;
+}
+
+.tree-toggle:hover {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.55);
+    color: #34d399;
+    transform: translateY(calc(-50% - 1px));
+}
+
+.tree-toggle:active {
+    transform: translateY(-50%);
 }

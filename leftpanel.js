@@ -50,11 +50,10 @@ function appendCompetition(comp, parentElement, expandedState = {}) {
     }
 
     const itemContainer = document.createElement('div');
-    itemContainer.style.display = 'flex';
-    itemContainer.style.justifyContent = 'space-between';
-    itemContainer.style.width = '100%';
+    itemContainer.classList.add('competition-row');
 
     const textNode = document.createElement('span');
+    textNode.classList.add('competition-name');
     textNode.textContent = `${fullName} (${comp.line})`;
     itemContainer.appendChild(textNode);
     listItem.appendChild(itemContainer);
@@ -69,17 +68,14 @@ function appendCompetition(comp, parentElement, expandedState = {}) {
         listItem.appendChild(childList);
 
         // Restore the expanded state
-        if (expandedState[comp.line]) {
-            childList.style.display = 'block';
-        } else {
-            childList.style.display = 'none'; 
-        }
+        const isInitiallyOpen = expandedState[comp.line] || comp.level === 0;
+        childList.style.display = isInitiallyOpen ? 'block' : 'none'; 
 
         // Create and append the toggle button
         const toggleButton = document.createElement('button');
-        toggleButton.textContent = '-';
-        toggleButton.classList.add('toggle-button');
-        toggleButton.style.display = expandedState[comp.line] || comp.level === 0 ? 'inline' : 'none';
+        toggleButton.classList.add('tree-toggle');
+        toggleButton.setAttribute('aria-label', 'Toggle children');
+        toggleButton.innerHTML = isInitiallyOpen ? '▾' : '▸';
 
         itemContainer.appendChild(toggleButton);
 
@@ -88,15 +84,16 @@ function appendCompetition(comp, parentElement, expandedState = {}) {
             e.stopPropagation();
             if (childList.style.display === 'none') {
                 childList.style.display = 'block';
-                toggleButton.style.display = 'inline';
+                toggleButton.innerHTML = '▾';
             }
         });
 
         // Add click event to toggle child visibility
         toggleButton.addEventListener('click', function(e) {
             e.stopPropagation();
-            childList.style.display = 'none';
-            toggleButton.style.display = 'none';
+            const isOpen = childList.style.display !== 'none';
+            childList.style.display = isOpen ? 'none' : 'block';
+            toggleButton.innerHTML = isOpen ? '▸' : '▾';
         });
     }
 

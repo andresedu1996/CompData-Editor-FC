@@ -3,7 +3,7 @@ const textTags = [
     'match_matchsituation', 'match_endruleleague', 'match_endruleko1leg', 'match_endruleko2leg1',
     'match_endruleko2leg2', 'match_endrulefriendly', 'standings_sort', 'schedule_seasonstartmonth',
     'is_women_competition', 'rule_allowadditionalsub', 'advance_pointskeeprounding',
-    'match_celebrationlevel', 'schedule_matchup_behavior', 'standings_use_shadow_table',
+    'match_celebrationlevel', 'schedule_matchup_behavior', 'standings_use_shadow_table', 
     'schedule_push_jan_season_year', 'rule_fixedmatchesdates', 'match_canusefancards', 'schedule_year_real_version',
     'rule_bookings', 'rule_offsides', 'rule_injuries', 'rule_allowadditionalsub', 'schedule_internationaldependency'
 ];
@@ -45,60 +45,7 @@ const options = [
     'second_transfer_window'
 ];
 
-const selectTypeBuffer = new Map();
-const selectTypeResetTimers = new Map();
-const TYPEAHEAD_RESET_MS = 800;
 
-function sortOptionsWithQuery(query) {
-    const lowerQuery = query.trim().toLowerCase();
-
-    return [...options].sort((a, b) => {
-        const scoreA = optionScore(a, lowerQuery);
-        const scoreB = optionScore(b, lowerQuery);
-
-        if (scoreA !== scoreB) return scoreA - scoreB;
-        return a.localeCompare(b);
-    });
-}
-
-function optionScore(option, query) {
-    if (!query) return 0;
-
-    const lowerOption = option.toLowerCase();
-
-    if (lowerOption.startsWith(query)) return 0;
-
-    const index = lowerOption.indexOf(query);
-
-    if (index !== -1) return 1 + index;
-
-    return 1000;
-}
-
-function populateSelectOptions(select, selectedValue, query = '') {
-    const sortedOptions = sortOptionsWithQuery(query);
-
-    select.innerHTML = '';
-
-    sortedOptions.forEach(option => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        if (option === selectedValue) optionElement.selected = true;
-        select.appendChild(optionElement);
-    });
-}
-
-function resetTypeahead(select) {
-    selectTypeBuffer.set(select, '');
-    populateSelectOptions(select, select.value);
-}
-
-function scheduleTypeaheadReset(select) {
-    clearTimeout(selectTypeResetTimers.get(select));
-    const timer = setTimeout(() => resetTypeahead(select), TYPEAHEAD_RESET_MS);
-    selectTypeResetTimers.set(select, timer);
-}
 
 function createSettingsDiv(competitionid) {
     const div = document.createElement('div');
@@ -123,31 +70,6 @@ function createSettingsDiv(competitionid) {
         addSettingRow(setting, tbody);
     });
 
-    const controlsContainer = document.createElement('div');
-    controlsContainer.classList.add('settings-controls');
-
-    const cloneButton = document.createElement('button');
-    cloneButton.textContent = 'Clone Last Setting';
-    cloneButton.disabled = settingsData.length === 0;
-    cloneButton.addEventListener('click', function () {
-        const competitionSettings = data['settings'].filter(entry => entry.id == competitionid);
-        const lastSetting = competitionSettings[competitionSettings.length - 1];
-
-        if (!lastSetting) return;
-
-        const clonedSetting = {
-            id: competitionid,
-            tag: lastSetting.tag,
-            value: lastSetting.value
-        };
-
-        data['settings'].push(clonedSetting);
-        data['settings'].sort((a, b) => a.id - b.id);
-
-        addSettingRow(clonedSetting, tbody);
-        cloneButton.disabled = false;
-    });
-
     // "Create New Setting" button (unchanged)
     const usedTags = settingsData.map(setting => setting.tag);
     const availableOptions = options.filter(option => !usedTags.includes(option));
@@ -160,17 +82,13 @@ function createSettingsDiv(competitionid) {
             const selectedOption = availableOptions.splice(randomIndex, 1)[0];
             let newSetting = createNewSettingData(competitionid, selectedOption);
             addSettingRow(newSetting, tbody);
-            cloneButton.disabled = false;
 
             if (availableOptions.length === 0) {
                 createButton.disabled = true;
             }
         });
-        controlsContainer.appendChild(createButton);
+        div.appendChild(createButton);
     }
-    controlsContainer.appendChild(cloneButton);
-
-    div.appendChild(controlsContainer);
 
     // 🔹 NEW: embed Init Teams inside the Settings window
     if (typeof createInitTeamsDiv === 'function' && data && Array.isArray(data['initteams'])) {
@@ -220,7 +138,13 @@ function addSettingRow(setting, tbody) {
     select.dataset.key = 'tag'; // Ensure this is set for duplicate checking
 
     // Populate the select options
-    populateSelectOptions(select, setting.tag);
+    options.forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.textContent = option;
+        if (option === setting.tag) optionElement.selected = true;
+        select.appendChild(optionElement);
+    });
 
     const input = document.createElement('input');
     input.type = textTags.includes(setting.tag) ? 'text' : 'number';
@@ -230,36 +154,9 @@ function addSettingRow(setting, tbody) {
 
     // Event listener for tag change
     select.addEventListener('change', function () {
+        
         setting.tag = select.value;  // Update the local variable to reflect the change
-        resetTypeahead(select);
         handleSettingTagChange(setting, input);
-    });
-
-    select.addEventListener('keydown', function (event) {
-        const key = event.key;
-        const isCharacter = key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey;
-
-        if (isCharacter) {
-            const newQuery = (selectTypeBuffer.get(select) || '') + key.toLowerCase();
-            selectTypeBuffer.set(select, newQuery);
-            populateSelectOptions(select, select.value, newQuery);
-            scheduleTypeaheadReset(select);
-            event.preventDefault();
-        } else if (key === 'Backspace') {
-            const currentQuery = selectTypeBuffer.get(select) || '';
-            const updatedQuery = currentQuery.slice(0, -1);
-            selectTypeBuffer.set(select, updatedQuery);
-            populateSelectOptions(select, select.value, updatedQuery);
-            scheduleTypeaheadReset(select);
-            event.preventDefault();
-        } else if (key === 'Escape') {
-            resetTypeahead(select);
-            populateSelectOptions(select, select.value);
-        }
-    });
-
-    select.addEventListener('blur', function () {
-        resetTypeahead(select);
     });
 
     // Event listener for value change

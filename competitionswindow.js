@@ -13,8 +13,8 @@ function createCompetitionsListDiv(parentId) {
     const rightDiv = document.createElement('div');
     leftDiv.classList.add('confederations-container');
     rightDiv.classList.add('confederations-container');
-    leftDiv.id == "leftcompdiv";
-    rightDiv.id == "rightcompdiv";
+  leftDiv.id = "leftcompdiv";
+rightDiv.id = "rightcompdiv";
 
     const leftHeader = document.createElement('h2');
     const rightHeader = document.createElement('h2');
@@ -240,6 +240,23 @@ function createCompetitionDivElement(child) {
     deleteButton.style.cursor = 'pointer'; // Set cursor to pointer for delete button
     inputContainer.appendChild(deleteButton);
 
+    // Create the duplicate button
+    const duplicateButton = document.createElement('span');
+    duplicateButton.classList.add('duplicate-button');
+    duplicateButton.innerHTML = '⧉'; // copy/duplicate symbol
+    duplicateButton.style.cursor = 'pointer';
+    // If you want it always visible, comment this out:
+    // duplicateButton.style.display = 'none';
+
+    inputContainer.appendChild(duplicateButton);
+
+        // Create the move button
+    const moveButton = document.createElement('span');
+    moveButton.classList.add('move-button');
+    moveButton.innerHTML = '⇄'; // move symbol (use whatever you like)
+    moveButton.style.cursor = 'pointer';
+    inputContainer.appendChild(moveButton);
+
     // Event listener to make the text editable and show the delete button
     divElement.addEventListener('click', function(event) {
         event.stopPropagation(); // Prevent triggering the document click event
@@ -282,6 +299,37 @@ function createCompetitionDivElement(child) {
         removeCompObj(id, divElement); // Pass the divElement to remove it later
     });
 
+        // Event listener for the duplicate button
+    duplicateButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent triggering the divElement click event
+        const id = parseInt(divElement.dataset.compid, 10);
+
+        // Optional: only allow duplicating real competitions (level >= 3)
+        const level = child.level;
+        if (level < 3) {
+            alert("Duplication is only supported for competition / cup / league entries.");
+            return;
+        }
+
+        duplicateCompetition(id);
+    });
+
+      // Event listener for the move button
+    moveButton.addEventListener('click', function (e) {
+        e.stopPropagation(); // Prevent triggering the divElement click event
+        const id = parseInt(divElement.dataset.compid, 10);
+        const level = child.level;
+
+        // We only support moving competition-level nodes (level 3)
+        if (level !== 3) {
+            alert("Move is only supported for competition-level entries.");
+            return;
+        }
+
+        openMoveCompetitionModal(id);
+    });
+
+
     // Handle saving the edited name
     textNode.addEventListener('blur', function() {
         textNode.contentEditable = false;
@@ -300,8 +348,66 @@ function createCompetitionDivElement(child) {
             commitChangesAndClose(shortNameInput,longNameInput, textNode, divElement);
         }
     });
-    
+
     return divElement;
+}
+
+function createTournamentTransferDiv(compId) {
+    const container = document.createElement('div');
+    container.classList.add('standard-div', 'level-content');
+
+    const header = document.createElement('h2');
+    header.textContent = 'Tournament Transfer';
+
+    const info = document.createElement('p');
+    info.textContent = 'Export or import this tournament (structure, settings, tasks, advancement).';
+    info.style.fontSize = '0.8rem';
+
+    const exportBtn = document.createElement('button');
+    exportBtn.textContent = 'Export Tournament';
+    exportBtn.addEventListener('click', () => exportTournament(compId));
+
+    const importReplaceInput = document.createElement('input');
+    importReplaceInput.type = 'file';
+    importReplaceInput.accept = 'application/json';
+    importReplaceInput.style.display = 'none';
+
+    const importReplaceBtn = document.createElement('button');
+    importReplaceBtn.textContent = 'Import & Replace';
+    importReplaceBtn.addEventListener('click', () => importReplaceInput.click());
+    importReplaceInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            handleTournamentImportFile(file, compId, 'replace');
+            importReplaceInput.value = '';
+        }
+    });
+
+    const importCopyInput = document.createElement('input');
+    importCopyInput.type = 'file';
+    importCopyInput.accept = 'application/json';
+    importCopyInput.style.display = 'none';
+
+    const importCopyBtn = document.createElement('button');
+    importCopyBtn.textContent = 'Import as Copy';
+    importCopyBtn.addEventListener('click', () => importCopyInput.click());
+    importCopyInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            handleTournamentImportFile(file, compId, 'copy');
+            importCopyInput.value = '';
+        }
+    });
+
+    container.appendChild(header);
+    container.appendChild(info);
+    container.appendChild(exportBtn);
+    container.appendChild(importReplaceBtn);
+    container.appendChild(importReplaceInput);
+    container.appendChild(importCopyBtn);
+    container.appendChild(importCopyInput);
+
+    return container;
 }
 
 function closeEditableElement(element) {
@@ -392,4 +498,135 @@ function commitChangesAndClose(shortNameInput, longNameInput, textNode, divEleme
 
     // Close the input mode
     closeAllEditableElements(); // Use the existing function to close the inputs and restore the text
+}
+
+function openMoveCompetitionModal(compLine) {
+    const comp = data['compobj'].find(function (c) {
+        return c.line === compLine;
+    });
+    if (!comp) {
+        alert("Competition not found: " + compLine);
+        return;
+    }
+
+    // Nations are level 2 in compobj
+    const nationNodes = data['compobj'].filter(function (c) {
+        return c.level === 2;
+    });
+    if (nationNodes.length === 0) {
+        alert("No nations found in compobj.");
+        return;
+    }
+
+    // Backdrop
+    const backdrop = document.createElement('div');
+    backdrop.id = 'move-competition-backdrop';
+    backdrop.style.position = 'fixed';
+    backdrop.style.top = '0';
+    backdrop.style.left = '0';
+    backdrop.style.right = '0';
+    backdrop.style.bottom = '0';
+    backdrop.style.backgroundColor = 'rgba(0,0,0,0.4)';
+    backdrop.style.display = 'flex';
+    backdrop.style.alignItems = 'center';
+    backdrop.style.justifyContent = 'center';
+    backdrop.style.zIndex = '9999';
+
+    // Modal
+    const modal = document.createElement('div');
+    modal.style.backgroundColor = '#1b1b1bff';
+    modal.style.padding = '16px';
+    modal.style.borderRadius = '8px';
+    modal.style.minWidth = '280px';
+    modal.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+
+    const title = document.createElement('h3');
+    title.textContent = 'Move competition to nation';
+    modal.appendChild(title);
+
+    const label = document.createElement('label');
+    label.textContent = 'Target nation:';
+    label.style.display = 'block';
+    label.style.marginBottom = '8px';
+    modal.appendChild(label);
+
+    const select = document.createElement('select');
+    select.style.width = '100%';
+    select.style.marginBottom = '12px';
+
+    nationNodes.forEach(function (nation) {
+        const option = document.createElement('option');
+        option.value = nation.line;
+
+        var rawName;
+        if (nation.longname && nation.longname.trim()) {
+            rawName = nation.longname.trim();
+        } else if (nation.shortname && nation.shortname.trim()) {
+            rawName = nation.shortname.trim();
+        } else {
+            rawName = 'Nation ' + nation.line;
+        }
+
+        var displayName = rawName;
+        if (typeof replaceNames === 'function') {
+            // reuse same helper as for the competition labels
+            displayName = replaceNames(rawName, data["compobj"]);
+        }
+
+        option.textContent = displayName + ' (' + nation.line + ')';
+
+        // Preselect current nation if this competition is already under one
+        if (nation.line === comp.parent) {
+            option.selected = true;
+        }
+
+        select.appendChild(option);
+    });
+
+    modal.appendChild(select);
+
+    // Buttons container
+    const btnContainer = document.createElement('div');
+    btnContainer.style.display = 'flex';
+    btnContainer.style.justifyContent = 'flex-end';
+    btnContainer.style.gap = '8px';
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+
+    const confirmBtn = document.createElement('button');
+    confirmBtn.textContent = 'Move';
+
+    btnContainer.appendChild(cancelBtn);
+    btnContainer.appendChild(confirmBtn);
+    modal.appendChild(btnContainer);
+
+    backdrop.appendChild(modal);
+    document.body.appendChild(backdrop);
+
+    function closeModal() {
+        if (backdrop && backdrop.parentNode) {
+            backdrop.parentNode.removeChild(backdrop);
+        }
+    }
+
+    cancelBtn.addEventListener('click', function () {
+        closeModal();
+    });
+
+    // Click outside to close
+    backdrop.addEventListener('click', function (e) {
+        if (e.target === backdrop) {
+            closeModal();
+        }
+    });
+
+    confirmBtn.addEventListener('click', function () {
+        const selected = parseInt(select.value, 10);
+        if (!isNaN(selected)) {
+            // This function must exist in compobj.js
+            moveCompetitionToNation(compLine, selected);
+        }
+        closeModal();
+    });
 }

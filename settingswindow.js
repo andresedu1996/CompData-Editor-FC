@@ -70,7 +70,32 @@ function createSettingsDiv(competitionid) {
         addSettingRow(setting, tbody);
     });
 
-    // "Create New Setting" button (unchanged)
+    const controlsContainer = document.createElement('div');
+    controlsContainer.classList.add('settings-controls');
+
+    const cloneButton = document.createElement('button');
+    cloneButton.textContent = 'Clone Last Setting';
+    cloneButton.disabled = settingsData.length === 0;
+    cloneButton.addEventListener('click', function () {
+        const competitionSettings = data['settings'].filter(entry => entry.id == competitionid);
+        const lastSetting = competitionSettings[competitionSettings.length - 1];
+
+        if (!lastSetting) return;
+
+        const clonedSetting = {
+            id: competitionid,
+            tag: lastSetting.tag,
+            value: lastSetting.value
+        };
+
+        data['settings'].push(clonedSetting);
+        data['settings'].sort((a, b) => a.id - b.id);
+
+        addSettingRow(clonedSetting, tbody);
+        cloneButton.disabled = false;
+    });
+
+    // "Create New Setting" button (now starts empty with a placeholder)
     const usedTags = settingsData.map(setting => setting.tag);
     const availableOptions = options.filter(option => !usedTags.includes(option));
 
@@ -78,17 +103,15 @@ function createSettingsDiv(competitionid) {
         const createButton = document.createElement('button');
         createButton.textContent = 'Create New Setting';
         createButton.addEventListener('click', function () {
-            const randomIndex = Math.floor(Math.random() * availableOptions.length);
-            const selectedOption = availableOptions.splice(randomIndex, 1)[0];
-            let newSetting = createNewSettingData(competitionid, selectedOption);
+            let newSetting = createNewSettingData(competitionid, '');
             addSettingRow(newSetting, tbody);
-
-            if (availableOptions.length === 0) {
-                createButton.disabled = true;
-            }
+            cloneButton.disabled = false;
         });
-        div.appendChild(createButton);
+        controlsContainer.appendChild(createButton);
     }
+    controlsContainer.appendChild(cloneButton);
+
+    div.appendChild(controlsContainer);
 
     // 🔹 NEW: embed Init Teams inside the Settings window
     if (typeof createInitTeamsDiv === 'function' && data && Array.isArray(data['initteams'])) {
@@ -113,7 +136,7 @@ function createNewSettingData(competitionid, defaultTag) {
     let newSetting = {
         id: competitionid,
         tag: defaultTag, // Use the provided default option
-        value: textTags.includes(defaultTag) ? '' : 0 // Default to empty string or 0 depending on type
+        value: (textTags.includes(defaultTag) || defaultTag === '') ? '' : 0 // Default to empty string or 0 depending on type
     };
 
     // Add the new setting to the data array
@@ -131,48 +154,77 @@ function addSettingRow(setting, tbody) {
 
     const tagCell = document.createElement('td');
     const valueCell = document.createElement('td');
+    const deleteCell = document.createElement('td');
     valueCell.classList.add('tablevalue');
 
-    const select = document.createElement('select');
-    select.classList.add('settingsselect');
-    select.dataset.key = 'tag'; // Ensure this is set for duplicate checking
+    const tagInput = document.createElement('input');
+    const datalistId = `settings-options-${setting.id}-${Math.random().toString(16).slice(2)}`;
+    const datalist = document.createElement('datalist');
 
-    // Populate the select options
+    tagInput.type = 'text';
+    tagInput.classList.add('settingsselect', 'settings-dropdown-input');
+    tagInput.dataset.key = 'tag'; // Ensure this is set for duplicate checking
+    tagInput.setAttribute('list', datalistId);
+    tagInput.placeholder = 'Select a setting';
+    tagInput.value = setting.tag;
+
+    datalist.id = datalistId;
+
+    // Populate the list of selectable options
     options.forEach(option => {
         const optionElement = document.createElement('option');
         optionElement.value = option;
-        optionElement.textContent = option;
-        if (option === setting.tag) optionElement.selected = true;
-        select.appendChild(optionElement);
+        datalist.appendChild(optionElement);
     });
 
-    const input = document.createElement('input');
-    input.type = textTags.includes(setting.tag) ? 'text' : 'number';
-    input.value = setting.value !== null ? setting.value : (input.type === 'text' ? '' : 0);
-    input.min = input.type === 'number' ? -1 : undefined;
-    input.classList.add('tablevalue-input');
+    const valueInput = document.createElement('input');
+    valueInput.type = textTags.includes(setting.tag) ? 'text' : 'number';
+    valueInput.value = setting.value !== null ? setting.value : (valueInput.type === 'text' ? '' : 0);
+    valueInput.min = valueInput.type === 'number' ? -1 : undefined;
+    valueInput.classList.add('tablevalue-input');
 
     // Event listener for tag change
-    select.addEventListener('change', function () {
-        
-        setting.tag = select.value;  // Update the local variable to reflect the change
-        handleSettingTagChange(setting, input);
+    tagInput.addEventListener('change', function () {
+        const newTag = tagInput.value.trim();
+
+        if (!options.includes(newTag)) {
+            tagInput.value = setting.tag;
+            return;
+        }
+
+        if (newTag === setting.tag) {
+            return;
+        }
+
+        setting.tag = newTag;  // Update the local variable to reflect the change
+        row.dataset.tag = newTag;
+        handleSettingTagChange(setting, valueInput);
     });
 
     // Event listener for value change
-    input.addEventListener('change', function () {
+    valueInput.addEventListener('change', function () {
         
-        if(input.value==''){
-            deleteSetting(setting, select);
+        if(valueInput.value==''){
+            deleteSetting(setting, tagInput);
         }else{
-            handleSettingValueChange(setting.id, setting.tag, input);
+            handleSettingValueChange(setting.id, setting.tag, valueInput);
         }
     });
 
-    tagCell.appendChild(select);
-    valueCell.appendChild(input);
+    tagCell.appendChild(tagInput);
+    tagCell.appendChild(datalist);
+    valueCell.appendChild(valueInput);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', function () {
+        deleteSetting(setting, tagInput);
+    });
+    deleteCell.appendChild(deleteButton);
+
     row.appendChild(tagCell);
     row.appendChild(valueCell);
+    row.appendChild(deleteCell);
     tbody.appendChild(row);
 }
 

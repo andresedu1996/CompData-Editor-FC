@@ -32,6 +32,7 @@
 
 </head>
 <body>
+    <a class="back-button" href="index.html">← Back to Home</a>
     <div class="container">
         <div class="file-selector" id="fileSelector">
             <label for="fileSelect" class="custom-file-upload">Click to Upload your JSON file</label>
@@ -49,9 +50,11 @@
         </div>
         
         <div class="left-panel" id="leftPanel">
-            <h2>Competitions 
-                <button class="download-button" id="downloadButton" title="Download Competitions" onclick='download()'>⇓</button>
-            </h2>
+            <h2>Competitions</h2>
+            <button class="download-button download-pill" id="downloadButton" title="Download Competitions" onclick="download()">
+                <span class="download-icon" aria-hidden="true">&darr;</span>
+                <span class="download-label">Download</span>
+            </button>
             <div class="competition-list">
                 <ul id="competitionList"></ul>
             </div>

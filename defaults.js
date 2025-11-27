@@ -240,6 +240,7 @@ let nations = {
 let trophynames = {
     "1": "3F Superliga",
     "4": "1A Pro League",
+    "7": "Brasil Serie A",
     "10": "Eredivisie",
     "13": "Premier League",
     "14": "EFL Championship",
@@ -266,6 +267,8 @@ let trophynames = {
     "80": "Ö. Bundesliga",
     "81": "Ö. Bundesliga Play-offs",
     "83": "K League 1",
+    "157": "Torneo Apertura",
+    "158": "Torneo Clausura",
     "189": "CSSL",
     "201": "Emirates FA Cup",
     "202": "Carabao Cup",
@@ -273,7 +276,7 @@ let trophynames = {
     "204": "Coupe de France",
     "206": "DFB-Pokal",
     "207": "Supercup",
-    "208": "Copa de España",
+    "208": "Copa del Rey",
     "210": "Coppa Italia",
     "211": "EA SPORTS FC Supercup",
     "212": "Österreich-Pokal",
@@ -283,13 +286,13 @@ let trophynames = {
     "216": "Superliga Playoffs",
     "217": "Norgesmesterskapet",
     "218": "Taça Portuguesa",
-    "219": "Scottish Cup",
+    "219": "Scottish FA Cup",
     "220": "Sveriges Cup",
     "221": "Schweizer Pokal",
     "223": "UEFA Champions League",
     "224": "UEFA Europa League",
     "225": "Supercopa",
-    "226": "UECL",
+    "226": "UEFA ECL",
     "227": "UWCL",
     "228": "FA Community Shield",
     "232": "UEFA Super Cup",
@@ -311,11 +314,13 @@ let trophynames = {
     "451": "Barrages Ligue 1",
     "900": "MatchTypeIntFriendly",
     "901": "MatchTypeIntFriendly",
-    "970": "CWC",
-    "980": "Euro.",
-    "981": "EC Qualifiers",
+    "970": "Club WC",
+    "980": "UEFA Euro",
+    "981": "EURO Qualifiers",
     "990": "World Cup",
-    "999": "Internatinental Cup",
+    "991": "World Cup Qualifiers",
+    "992": "World Cup Qualifiers",
+    "999": "Intercontinental Cup",
     "1003": "Libertadores",
     "1004": "Cupa Națională",
     "1014": "Sudamericana",
@@ -329,7 +334,7 @@ let trophynames = {
     "2218": "Arkema PL",
     "2221": "NWSL",
     "2222": "Liga F",
-    "3005": "Asia Contl Cup",
+    "3005": "AFC CL",
     "5060": "SUPERLIGA Play-offs",
     "5067": "Copa de Primera",
     "90001": "European FA",
@@ -343,3 +348,43 @@ let trophynames = {
     "90009": "European FA",
     "90010": "CCAF"
 };
+// ========================================
+// 🌍 Confederación por país (auto-detectado)
+// ========================================
+const CONFED_BY_NATION = {};
+
+// UEFA
+[
+  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,
+  25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,
+  46,47,48,49,50,51
+].forEach(id => CONFED_BY_NATION[id] = "UEFA");
+
+// CONMEBOL
+[
+  52,53,54,55,56,57,58,59,60,61
+].forEach(id => CONFED_BY_NATION[id] = "CONMEBOL");
+
+// CONCACAF
+[
+  62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,
+  82,83,84,85,86,87,88,89,90,91,92,93,94,95,96
+].forEach(id => CONFED_BY_NATION[id] = "CONCACAF");
+
+// CAF
+[
+  97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,
+  112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,
+  127,128,129,130,131,132,133,134,135,136,137,138,139,140,
+  141,142,143,144,145,146,147,148
+].forEach(id => CONFED_BY_NATION[id] = "CAF");
+
+// AFC
+[
+  149,150,151,152,153,154,155,157,158,159,160,161,162,163,
+  164,165,166,167,168,169,170,171,172,173,174,175,176,177,
+  178,179,180,181,182,183
+].forEach(id => CONFED_BY_NATION[id] = "AFC");
+
+// OFC (si tienes datos)
+[ /* no data in your defaults.js */ ].forEach(id => CONFED_BY_NATION[id] = "OFC");

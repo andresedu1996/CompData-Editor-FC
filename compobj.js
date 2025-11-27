@@ -140,45 +140,46 @@ function updateInitTeamsReferences(newLine, amt) {
     });
 }
 
+// Find the last descendant line for a given parent line, based on current sorted compobj order
+function findLastDescendantLine(parentLine) {
+    const list = [...data['compobj']].sort((a, b) => a.line - b.line);
+    const parentIdx = list.findIndex(c => c.line === parentLine);
+    if (parentIdx === -1) return parentLine;
+    const parentLevel = list[parentIdx].level;
+    let lastLine = parentLine;
+    for (let i = parentIdx + 1; i < list.length; i++) {
+        if (list[i].level <= parentLevel) break;
+        lastLine = list[i].line;
+    }
+    return lastLine;
+}
+
+// Shift compobj line/parent ids and all references at or beyond newLine
+function shiftIdsAndReferences(newLine, delta) {
+    data['compobj'].forEach(obj => {
+        if (obj.line >= newLine) obj.line += delta;
+        if (obj.parent >= newLine) obj.parent += delta;
+    });
+    updateAllReferences(newLine, delta);
+}
+
 /* ============================================================
    createNewCompObj with optional insertAfterId
    ============================================================ */
 function createNewCompObj(parentId, compName, level, listElement, insertAfterId = null) {
     const expandedState = getExpandedState();
-    let insertionPoint = -1;
 
+    // Determine new line id near the parent block
+    let newLine;
     if (insertAfterId !== null && !isNaN(insertAfterId)) {
-        const foundIndex = data['compobj'].findIndex(o => o.line === insertAfterId);
-        if (foundIndex !== -1) {
-            insertionPoint = foundIndex + 1;
-        } else {
-            insertionPoint = data['compobj'].length;
-        }
+        newLine = Number(insertAfterId) + 1;
     } else {
-        switch (level) {
-            case 1:
-                insertionPoint = findInsertionPoint(findLastCompOfLvl(1, 0), 1);
-                break;
-            case 2:
-                insertionPoint = findInsertionPoint(findLastCompOfLvl(2, parentId), 2);
-                break;
-            case 3:
-                insertionPoint = findInsertionPoint(findLastCompOfLvl(3, parentId), 3);
-                break;
-            case 4:
-                insertionPoint = findInsertionPoint(findLastCompOfLvl(4, parentId), 4);
-                break;
-            case 5:
-                insertionPoint = findInsertionPoint(findLastCompOfLvl(5, parentId), 5);
-                break;
-            default:
-                insertionPoint = data['compobj'].length;
-                break;
-        }
+        const lastDesc = findLastDescendantLine(parentId);
+        newLine = lastDesc + 1;
     }
 
-    // IMPORTANT: `line` is NOT the array index; we need a new line number.
-    const newLine = findLastValidLine() + 1;
+    // Shift ids/references to make room
+    shiftIdsAndReferences(newLine, 1);
 
     const newCompObj = {
         line: newLine,
@@ -188,14 +189,7 @@ function createNewCompObj(parentId, compName, level, listElement, insertAfterId 
         parent: parentId
     };
 
-    // Shift all compobjs after insertion point in the *array*
-    pushSubsequentCompObjs(insertionPoint);
-
-    // Insert into array
-    data['compobj'].splice(insertionPoint, 0, newCompObj);
-
-    // Shift ID-based references >= newLine
-    updateAllReferences(newLine, 1);
+    data['compobj'].push(newCompObj);
 
     if (listElement) {
         const newCompElement = createCompetitionDivElement(newCompObj);
@@ -205,20 +199,6 @@ function createNewCompObj(parentId, compName, level, listElement, insertAfterId 
     data['compobj'].sort((a, b) => a.line - b.line);
     organizeCompetitions(data);
     restoreExpandedState(expandedState);
-}
-
-function pushSubsequentCompObjs(startPoint) {
-    data['compobj'].forEach((obj, idx) => {
-        if (idx >= startPoint) {
-            obj.line++;
-        }
-    });
-
-    data['compobj'].forEach(obj => {
-        if (obj.parent >= startPoint) {
-            obj.parent++;
-        }
-    });
 }
 
 function removeCompObj(id, elementToRemove) {

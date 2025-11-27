@@ -132,6 +132,7 @@ function buildwindow3(id){
     const competitionsDiv=createCompetitionsListDiv(id);
     const settingsDiv = createSettingsDiv(id);
     const tasksDiv = createTasksDiv(id);
+    const transferDiv = createTournamentTransferDiv(id);
 
     // Clear any existing content and append the header, settings div, competitions list, and button
     const contentElement = document.getElementById('level-3-content');
@@ -142,6 +143,7 @@ function buildwindow3(id){
     left.appendChild(competitionsDiv);
     left.appendChild(settingsDiv);
     right.appendChild(tasksDiv);
+    right.appendChild(transferDiv);
 }
 
 function buildwindow4(id){

@@ -14,6 +14,10 @@ Lightweight editor to view and edit FIFA/FC CompData JSON files. This project bu
 - Calendar / schedule generation with configurable rules and automatic round/match calculations ([`generateAutoSchedule`](schedulewindow.js), [schedulewindow.js](schedulewindow.js)).
 - Settings editor with many common compdata tags exposed ([`createSettingsDiv`](settingswindow.js), [settingswindow.js](settingswindow.js)).
 - Export/download tool for saved JSON/ZIP ([`download`](output.js), [output.js](output.js)).
+- Tournament export/import with full subtree remapping across compobj, settings, tasks, schedule, advancement, standings, objectives, and initteams ([`exportTournament`/`importTournamentPackage`](output.js), panel in [`createTournamentTransferDiv`](competitionswindow.js)).
+- Add-stage/add-group now inserts using the next local ID and shifts following items/references to stay contiguous ([`createNewCompObj`](compobj.js)).
+- Task management improvements: clone last setting, per-row delete, typeahead tags; tasks now support inline reordering (▲/▼) and safe deletion ([settingswindow.js], [`createTaskSection`/`moveTask`](taskswindow.js)).
+- Hierarchy UI polish: chevron toggles, padded alignment, pill download button, and hover fixes ([leftpanel.js], [style.css], [local.html]).
 - Uses the provided example dataset: [practicefile.json](practicefile.json).
 - Frontend served locally via [local.html](local.html) and styled with [style.css](style.css).
 

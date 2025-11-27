@@ -25,40 +25,39 @@ async function download() {
     zip.file(jsonFileName, jsonDataBlob);
 
     // Generate the ZIP file and trigger the download
-// Generate the ZIP file and trigger the download
-const content = await zip.generateAsync({ type: 'blob' });
+    const content = await zip.generateAsync({ type: 'blob' });
 
-if (window.showSaveFilePicker) {
-    // Modern browsers supporting the File System Access API
-    const options = {
-        suggestedName: `scyppan-${datetimeString}-compdata.zip`,
-        types: [
-            {
-                description: 'ZIP Files',
-                accept: { 'application/zip': ['.zip'] }
-            }
-        ]
-    };
-    
-    try {
-        const handle = await showSaveFilePicker(options);
-        const writableStream = await handle.createWritable();
-        await writableStream.write(content);
-        await writableStream.close();
-        alert('File successfully saved!');
-    } catch (err) {
-        console.error('Save canceled or failed:', err);
+    if (window.showSaveFilePicker) {
+        // Modern browsers supporting the File System Access API
+        const options = {
+            suggestedName: `scyppan-${datetimeString}-compdata.zip`,
+            types: [
+                {
+                    description: 'ZIP Files',
+                    accept: { 'application/zip': ['.zip'] }
+                }
+            ]
+        };
+        
+        try {
+            const handle = await showSaveFilePicker(options);
+            const writableStream = await handle.createWritable();
+            await writableStream.write(content);
+            await writableStream.close();
+            alert('File successfully saved!');
+        } catch (err) {
+            console.error('Save canceled or failed:', err);
+        }
+    } else {
+        // Fallback for browsers that don't support showSaveFilePicker
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(content);
+        link.download = `scyppan-${datetimeString}-compdata.zip`;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
-} else {
-    // Fallback for browsers that don't support showSaveFilePicker
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(content);
-    link.download = `scyppan-${datetimeString}-compdata.zip`;
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
 
 }
 
@@ -191,7 +190,7 @@ function exportStandingsData() {
 function standingsToTxt(standingsArray) {
     return standingsArray
         .filter(entry => !Object.values(entry).includes(null)) // Filter out rows with any null values
-        .map(entry => `${entry.id},${entry.position}`)
+    .map(entry => `${entry.id},${entry.position}`)
         .join('\n') + '\n';
 }
 
@@ -267,4 +266,209 @@ async function generateJsonDataBlob() {
 
     const jsonData = JSON.stringify(filteredData, null, 2); // Convert filtered data to JSON string
     return new Blob([jsonData], { type: 'application/json' }); // Return the blob
+}
+
+// ===== Tournament-level export/import helpers =====
+function buildTournamentPackage(rootId) {
+    const ids = new Set(getSubtreeIdsFromCompobj(rootId).map(Number));
+    if (ids.size === 0) return null;
+
+    const safeClone = (arr = []) => JSON.parse(JSON.stringify(arr));
+    const meta = {
+        rootId,
+        name: getCompetitionNameById(rootId),
+        exportedAt: new Date().toISOString()
+    };
+
+    const compobj = safeClone(data['compobj'].filter(entry => ids.has(Number(entry.line))));
+    const settings = safeClone(data['settings'].filter(entry => ids.has(Number(entry.id))));
+    const tasks = safeClone(data['tasks'].filter(entry => ids.has(Number(entry.id))));
+    const schedule = safeClone(data['schedule'].filter(entry => ids.has(Number(entry.id))));
+    const advancement = safeClone((data['advancement'] || []).filter(entry => ids.has(Number(entry.groupid))));
+    const objectives = safeClone((data['objectives'] || []).filter(entry => ids.has(Number(entry.id))));
+    const standings = safeClone((data['standings'] || []).filter(entry => ids.has(Number(entry.id))));
+    const initteams = safeClone((data['initteams'] || []).filter(entry => {
+        const compId = entry.compid ?? entry.id ?? (Array.isArray(entry) ? entry[0] : null);
+        return ids.has(Number(compId));
+    }));
+
+    return { meta, compobj, settings, tasks, schedule, advancement, objectives, standings, initteams };
+}
+
+function exportTournament(rootId) {
+    const pkg = buildTournamentPackage(rootId);
+    if (!pkg) {
+        alert('No data found for this tournament.');
+        return;
+    }
+
+    const blob = new Blob([JSON.stringify(pkg, null, 2)], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `tournament-${rootId}.json`;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    if (typeof createMessage === 'function') {
+        createMessage(`Exported tournament ${pkg.meta.name} (${rootId})`, 'info');
+    }
+}
+
+function importTournamentPackage(pkg, targetRootId, mode = 'replace') {
+    if (!pkg || !Array.isArray(pkg.compobj) || pkg.compobj.length === 0) {
+        throw new Error('Invalid tournament package.');
+    }
+
+    const sourceRootId = Number(pkg.meta?.rootId ?? pkg.compobj[0].line);
+    const targetRoot = data['compobj'].find(c => c.line === targetRootId);
+    if (!targetRoot) {
+        throw new Error('Target competition not found.');
+    }
+
+    const targetParent = targetRoot.parent;
+    const idMap = new Map();
+    const removeIds = getSubtreeIdsFromCompobj(targetRootId).map(Number);
+    const removeSet = new Set(removeIds);
+    const oldCount = removeIds.length;
+    const oldMax = Math.max(...removeIds);
+
+    const filterOutIds = (arr = [], key = 'id') =>
+        Array.isArray(arr) ? arr.filter(entry => !removeSet.has(Number(entry[key]))) : [];
+
+    // Remove existing subtree data
+    data['compobj'] = data['compobj'].filter(entry => !removeSet.has(Number(entry.line)));
+    data['settings'] = filterOutIds(data['settings'], 'id');
+    data['tasks'] = filterOutIds(data['tasks'], 'id');
+    data['schedule'] = filterOutIds(data['schedule'], 'id');
+    data['objectives'] = filterOutIds(data['objectives'], 'id');
+    data['standings'] = filterOutIds(data['standings'], 'id');
+    data['advancement'] = (data['advancement'] || []).filter(entry => !removeSet.has(Number(entry.groupid)));
+    data['initteams'] = (data['initteams'] || []).filter(entry => {
+        const compId = entry.compid ?? entry.id ?? (Array.isArray(entry) ? entry[0] : null);
+        return !removeSet.has(Number(compId));
+    });
+
+    // Shift everything after the old subtree to make room or close gaps
+    const newCount = pkg.compobj.length;
+    const delta = newCount - oldCount;
+    if (delta !== 0) {
+        data['compobj'].forEach(obj => {
+            if (Number(obj.line) > oldMax) {
+                obj.line += delta;
+            }
+            if (Number(obj.parent) > oldMax) {
+                obj.parent += delta;
+            }
+        });
+        updateAllReferences(oldMax + 1, delta);
+    }
+
+    // Assign new contiguous ids for the incoming subtree
+    const baseId = mode === 'replace'
+        ? Number(targetRootId)
+        : (Math.max(...data['compobj'].map(entry => Number(entry.line)), 0) + 1);
+
+    const sortedCompobj = [...pkg.compobj].sort((a, b) => Number(a.line) - Number(b.line));
+
+    sortedCompobj.forEach((entry, idx) => {
+        const oldId = Number(entry.line);
+        const newId = baseId + idx;
+        idMap.set(oldId, newId);
+    });
+
+    const mapId = (id) => {
+        const num = Number(id);
+        if (!Number.isFinite(num)) return id;
+        return idMap.has(num) ? idMap.get(num) : num;
+    };
+
+    sortedCompobj.forEach(entry => {
+        const oldId = Number(entry.line);
+        const newId = idMap.get(oldId);
+        const oldParent = Number(entry.parent);
+        const newParent = (oldId === sourceRootId) ? targetParent : mapId(oldParent);
+        data['compobj'].push({ ...entry, line: newId, parent: newParent });
+    });
+
+    const pushMapped = (sourceArr, targetArr, mapper) => {
+        (sourceArr || []).forEach(entry => targetArr.push(mapper(entry)));
+    };
+
+    pushMapped(pkg.settings, data['settings'], entry => ({
+        ...entry,
+        id: mapId(entry.id),
+        value: (entry.tag && typeof settingswithrefs !== 'undefined' && settingswithrefs.includes(entry.tag))
+            ? mapId(entry.value)
+            : entry.value
+    }));
+
+    pushMapped(pkg.tasks, data['tasks'], entry => {
+        const maybeMap = (val) => {
+            const num = Number(val);
+            return Number.isFinite(num) ? mapId(num) : val;
+        };
+        const mapped = { ...entry, id: mapId(entry.id) };
+        ['param1', 'param2', 'param3', 'param4'].forEach(k => {
+            if (k in entry) mapped[k] = maybeMap(entry[k]);
+        });
+        return mapped;
+    });
+
+    pushMapped(pkg.schedule, data['schedule'], entry => ({ ...entry, id: mapId(entry.id) }));
+    pushMapped(pkg.objectives, data['objectives'], entry => ({ ...entry, id: mapId(entry.id) }));
+    pushMapped(pkg.standings, data['standings'], entry => ({ ...entry, id: mapId(entry.id) }));
+
+    pushMapped(pkg.advancement, data['advancement'], entry => ({
+        ...entry,
+        groupid: mapId(entry.groupid),
+        pushtocompetition: mapId(entry.pushtocompetition)
+    }));
+
+    pushMapped(pkg.initteams, data['initteams'], entry => {
+        if (Array.isArray(entry)) {
+            const mapped = [...entry];
+            mapped[0] = mapId(entry[0]);
+            return mapped;
+        }
+        const compId = entry.compid ?? entry.id;
+        return { ...entry, compid: mapId(compId), id: mapId(entry.id ?? compId) };
+    });
+
+    data['compobj'].sort((a, b) => a.line - b.line);
+    data['settings'].sort((a, b) => a.id - b.id);
+    data['tasks'].sort((a, b) => a.id - b.id);
+    data['schedule'].sort((a, b) => a.id - b.id);
+    data['advancement'].sort((a, b) => a.groupid - b.groupid || a.slot - b.slot);
+
+    return idMap.get(sourceRootId) ?? targetRootId;
+}
+
+function handleTournamentImportFile(file, targetRootId, mode = 'replace') {
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        try {
+            const pkg = JSON.parse(e.target.result);
+            const newRootId = importTournamentPackage(pkg, targetRootId, mode);
+
+            if (typeof organizeCompetitions === 'function') {
+                organizeCompetitions(data);
+            }
+            if (typeof showWindow === 'function' && typeof populateWindow === 'function') {
+                showWindow(3);
+                populateWindow(3, newRootId);
+            }
+            if (typeof createMessage === 'function') {
+                const label = mode === 'replace' ? 'replaced' : 'imported copy';
+                createMessage(`Tournament ${label} successfully. Root id: ${newRootId}`, 'info');
+            }
+        } catch (err) {
+            console.error('Failed to import tournament package', err);
+            alert('Failed to import tournament package. Please ensure it is a valid export.');
+        }
+    };
+    reader.readAsText(file);
 }

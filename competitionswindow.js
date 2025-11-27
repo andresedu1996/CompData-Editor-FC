@@ -348,8 +348,66 @@ function createCompetitionDivElement(child) {
             commitChangesAndClose(shortNameInput,longNameInput, textNode, divElement);
         }
     });
-    
+
     return divElement;
+}
+
+function createTournamentTransferDiv(compId) {
+    const container = document.createElement('div');
+    container.classList.add('standard-div', 'level-content');
+
+    const header = document.createElement('h2');
+    header.textContent = 'Tournament Transfer';
+
+    const info = document.createElement('p');
+    info.textContent = 'Export or import this tournament (structure, settings, tasks, advancement).';
+    info.style.fontSize = '0.8rem';
+
+    const exportBtn = document.createElement('button');
+    exportBtn.textContent = 'Export Tournament';
+    exportBtn.addEventListener('click', () => exportTournament(compId));
+
+    const importReplaceInput = document.createElement('input');
+    importReplaceInput.type = 'file';
+    importReplaceInput.accept = 'application/json';
+    importReplaceInput.style.display = 'none';
+
+    const importReplaceBtn = document.createElement('button');
+    importReplaceBtn.textContent = 'Import & Replace';
+    importReplaceBtn.addEventListener('click', () => importReplaceInput.click());
+    importReplaceInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            handleTournamentImportFile(file, compId, 'replace');
+            importReplaceInput.value = '';
+        }
+    });
+
+    const importCopyInput = document.createElement('input');
+    importCopyInput.type = 'file';
+    importCopyInput.accept = 'application/json';
+    importCopyInput.style.display = 'none';
+
+    const importCopyBtn = document.createElement('button');
+    importCopyBtn.textContent = 'Import as Copy';
+    importCopyBtn.addEventListener('click', () => importCopyInput.click());
+    importCopyInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            handleTournamentImportFile(file, compId, 'copy');
+            importCopyInput.value = '';
+        }
+    });
+
+    container.appendChild(header);
+    container.appendChild(info);
+    container.appendChild(exportBtn);
+    container.appendChild(importReplaceBtn);
+    container.appendChild(importReplaceInput);
+    container.appendChild(importCopyBtn);
+    container.appendChild(importCopyInput);
+
+    return container;
 }
 
 function closeEditableElement(element) {

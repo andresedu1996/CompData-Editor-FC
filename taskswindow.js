@@ -37,6 +37,27 @@ function createTaskSection(title, taskOptions, tasks) {
         taskRow.appendChild(taskLeft);
         taskRow.appendChild(taskRight);
 
+        // Reorder controls
+        const controls = document.createElement('div');
+        controls.classList.add('task-controls');
+
+        const upButton = document.createElement('button');
+        upButton.textContent = '▲';
+        upButton.title = 'Move up';
+        upButton.addEventListener('click', () => {
+            moveTask(task, taskOptions, 'up');
+        });
+
+        const downButton = document.createElement('button');
+        downButton.textContent = '▼';
+        downButton.title = 'Move down';
+        downButton.addEventListener('click', () => {
+            moveTask(task, taskOptions, 'down');
+        });
+
+        controls.appendChild(upButton);
+        controls.appendChild(downButton);
+
         descriptionSelect.addEventListener('change', () => {
             updateTaskData(task, 'description', descriptionSelect.value);
             updateParamLabels(descriptionSelect.value, param1Input, param2Input, param3Input, param4Input);
@@ -68,6 +89,7 @@ function createTaskSection(title, taskOptions, tasks) {
         updateParamLabels(task.description, param1Input, param2Input, param3Input, param4Input);
 
         taskContainer.appendChild(taskRow);
+        taskContainer.appendChild(controls);
         sectionDiv.appendChild(taskContainer);
     });
 
@@ -270,6 +292,45 @@ function updateTaskData(entry, key, value) {
         entry[key] = value;
     } else {
         console.error(`NO TASK!`);
+    }
+}
+
+function moveTask(task, allowedDescriptions, direction) {
+    if (!Array.isArray(data['tasks'])) return;
+
+    // Collect indices in data['tasks'] that belong to this competition and allowed descriptions
+    const indices = [];
+    data['tasks'].forEach((t, idx) => {
+        if (t.id == task.id && allowedDescriptions.includes(t.description)) {
+            indices.push(idx);
+        }
+    });
+
+    const currentIndex = data['tasks'].indexOf(task);
+    if (currentIndex === -1) return;
+
+    const positionInFiltered = indices.indexOf(currentIndex);
+    if (positionInFiltered === -1) return;
+
+    let swapWith = -1;
+    if (direction === 'up' && positionInFiltered > 0) {
+        swapWith = indices[positionInFiltered - 1];
+    } else if (direction === 'down' && positionInFiltered < indices.length - 1) {
+        swapWith = indices[positionInFiltered + 1];
+    }
+
+    if (swapWith === -1) return;
+
+    // Swap in data['tasks']
+    const temp = data['tasks'][currentIndex];
+    data['tasks'][currentIndex] = data['tasks'][swapWith];
+    data['tasks'][swapWith] = temp;
+
+    // Rebuild UI for this competition
+    const tasksDiv = createTasksDiv(task.id);
+    const existing = document.getElementById('tasks');
+    if (existing && existing.parentElement) {
+        existing.parentElement.replaceChild(tasksDiv, existing);
     }
 }
 

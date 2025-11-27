@@ -142,6 +142,23 @@ function findLastCompInHierarchy(startLine, level) {
     return lastLine;
 }
 
+// Collect the full set of compobj ids for a given root (the root itself plus all descendants).
+function getSubtreeIdsFromCompobj(rootId) {
+    const ids = new Set();
+    const queue = [rootId];
+
+    while (queue.length > 0) {
+        const current = queue.shift();
+        ids.add(current);
+
+        data['compobj']
+            .filter(entry => entry.parent == current)
+            .forEach(child => queue.push(child.line));
+    }
+
+    return Array.from(ids);
+}
+
 function removeAllStandardDivs() {
     const standardDivs = document.querySelectorAll('.standard-div');
     standardDivs.forEach(div => {

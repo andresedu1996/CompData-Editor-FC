@@ -22,11 +22,18 @@ Lightweight editor to view and edit FIFA/FC CompData JSON files. This project bu
 - Frontend served locally via [local.html](local.html) and styled with [style.css](style.css).
 
 ## Quick start
-1. Open `local.html` in a modern browser: [local.html](local.html)  
+1. Open the landing page: [index.html](index.html)  
+   - Comp Editor: [local.html](local.html)  
+   - JSON Maker (modified): [jsonmaker/local.html](jsonmaker/local.html)  
 2. Click the file upload control and select your combined JSON (e.g. produced with scyppan/json-maker): [practicefile.json](practicefile.json)  
    - File loading and parsing handled in [`main.js`](main.js).
 3. Browse competitions in the left panel, edit settings, clone competitions, manage init teams, or generate schedules.
 4. Use the Download button to export changes (`download()` in [output.js](output.js)).
+
+## Hosting (free)
+- GitHub Pages: push this repo to GitHub, then enable Pages (Settings → Pages → Source: `main`/`master`, root). Access via `https://<username>.github.io/<repo>/`.
+- Netlify/Vercel: drop the repo or the built static files (index.html, local.html, jsonmaker/local.html, assets) into a new project; no server needed.
+- Any static host works—the tools are entirely client-side.
 
 ## Notes & Credits
 - This project intends to improve the base work by Scyppan and Eshortx by adding UI/UX refinements and features such as competition cloning, integrated init teams editing, and calendar generation.

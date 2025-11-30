@@ -27,7 +27,7 @@ function createInitTeamsDiv(compId) {
         return eid === compId;
     });
 
-    entries.forEach(entry => {
+    const addEntryRow = (entry) => {
         const pos = entry.position ?? entry.finishpos;
         const tr = document.createElement('tr');
 
@@ -64,19 +64,21 @@ function createInitTeamsDiv(compId) {
         tr.appendChild(teamTd);
         tr.appendChild(actionsTd);
         tbody.appendChild(tr);
-    });
+    };
+
+    entries.forEach(addEntryRow);
 
     // Simple "Add row" button
     const addBtn = document.createElement('button');
     addBtn.textContent = 'Add Init Team';
     addBtn.addEventListener('click', () => {
         const newEntry = {
-            id: compId,        // or compid: compId
-            finishpos: 1,
+            compid: compId,
+            finishpos: (tbody.children.length || 0) + 1,
             teamid: -1
         };
         (data['initteams'] ||= []).push(newEntry);
-        // For simplicity, rebuild the window or append a new row
+        addEntryRow(newEntry);
     });
     div.appendChild(addBtn);
 

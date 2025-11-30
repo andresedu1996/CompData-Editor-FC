@@ -49,6 +49,8 @@ function buildwindow0() {
 
     const weatherDiv = createWeatherDiv(0);
 
+    const validatorDiv = createTournamentValidatorDiv();
+
     // Clear any existing content and append the header, settings div, competitions list, and button
     const contentElement = document.getElementById('level-0-content');
     contentElement.innerHTML = ''; // Clear existing content
@@ -58,7 +60,8 @@ function buildwindow0() {
     left.appendChild(competitionsListDiv);
     left.appendChild(weatherDiv);
     right.appendChild(settingsDiv);
-    
+    right.appendChild(validatorDiv);
+
 }
 
 function buildwindow1(id) {

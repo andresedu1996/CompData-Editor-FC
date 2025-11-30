@@ -502,6 +502,110 @@ input[type="text"]:hover, select:hover {
     transform: scale(1.05);
 }
 
+.validator-input-row {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.validator-input {
+    flex: 1;
+    padding: 0.4em 0.55em;
+    border-radius: 0.375em;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card-soft);
+    color: var(--text-main);
+}
+
+.validator-results {
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.5em;
+    padding: 0.75em;
+    background: var(--bg-card-soft);
+    color: var(--text-main);
+    font-size: 0.95em;
+}
+
+.validator-summary {
+    font-weight: 600;
+    margin-bottom: 0.25em;
+}
+
+.validator-meta {
+    color: var(--text-muted);
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+}
+
+.validator-warning {
+    background: var(--danger-soft);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 0.4em 0.6em;
+    border-radius: 0.375em;
+    margin-bottom: 0.5em;
+}
+
+.validator-hint {
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 0.75em;
+}
+
+.validator-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5em;
+}
+
+.validator-table th,
+.validator-table td {
+    border: 1px solid var(--border-subtle);
+    padding: 0.45em 0.5em;
+    text-align: left;
+    vertical-align: top;
+}
+
+.validator-table th {
+    background: var(--bg-card);
+    color: var(--text-main);
+}
+
+.validator-table td {
+    background: var(--bg-card-soft);
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2em 0.6em;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.status-ok {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.status-under {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+.status-over {
+    background: rgba(245, 158, 11, 0.16);
+    color: #f59e0b;
+}
+
+.validator-subtext {
+    color: var(--text-muted);
+    font-size: 0.85em;
+    margin-top: 0.25em;
+}
+
 .standard-div {
     margin-bottom: 0.75em;
     height: 50%;

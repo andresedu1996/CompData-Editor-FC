@@ -9,6 +9,11 @@ document.getElementById('fileSelect').addEventListener('change', function(event)
                 organizeCompetitions(data);
                 document.getElementById('leftPanel').classList.remove('hidden');
                 showMainUI();
+                // Populate the root window immediately so global tools (like the validator)
+                // are visible without needing to click the tree first.
+                if (typeof populateWindow === 'function') {
+                    populateWindow(0, 0);
+                }
             } catch (error) {
                 createMessage("Error parsing JSON file:", 'error');
                 alert('Invalid JSON file.');

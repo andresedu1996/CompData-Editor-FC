@@ -1,0 +1,2469 @@
+{
+  "meta": {
+    "rootId": 1735,
+    "name": "TrophyName_Abbr15_353",
+    "exportedAt": "2025-11-30T02:38:04.236Z"
+  },
+  "compobj": [
+    {
+      "line": 1735,
+      "level": 3,
+      "shortname": "C353",
+      "longname": "TrophyName_Abbr15_353",
+      "parent": 1718
+    },
+    {
+      "line": 1736,
+      "level": 4,
+      "shortname": "S1",
+      "longname": "FCE_League_Stage",
+      "parent": 1735
+    },
+    {
+      "line": 1737,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1736
+    }
+  ],
+  "settings": [
+    {
+      "id": 1735,
+      "tag": "asset_id",
+      "value": 353
+    },
+    {
+      "id": 1735,
+      "tag": "comp_type",
+      "value": "LEAGUE"
+    },
+    {
+      "id": 1735,
+      "tag": "rule_numyellowstored",
+      "value": 3
+    },
+    {
+      "id": 1735,
+      "tag": "schedule_internationaldependency",
+      "value": "NONE"
+    },
+    {
+      "id": 1735,
+      "tag": "standings_sort",
+      "value": "POINTS"
+    },
+    {
+      "id": 1735,
+      "tag": "standings_sort",
+      "value": "GOALDIFF"
+    },
+    {
+      "id": 1735,
+      "tag": "standings_sort",
+      "value": "GOALSFOR"
+    },
+    {
+      "id": 1735,
+      "tag": "standings_sort",
+      "value": "H2HPOINTS"
+    },
+    {
+      "id": 1735,
+      "tag": "standings_sort",
+      "value": "H2HGOALDIFF"
+    },
+    {
+      "id": 1735,
+      "tag": "standings_sort",
+      "value": "H2HGOALSFOR"
+    },
+    {
+      "id": 1736,
+      "tag": "match_matchsituation",
+      "value": "LEAGUE"
+    },
+    {
+      "id": 1736,
+      "tag": "info_prize_money",
+      "value": 1500000
+    },
+    {
+      "id": 1736,
+      "tag": "info_prize_money_drop",
+      "value": 3
+    },
+    {
+      "id": 1737,
+      "tag": "num_games",
+      "value": 1
+    },
+    {
+      "id": 1737,
+      "tag": "info_slot_champ",
+      "value": 1
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_champ",
+      "value": 1
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_libert",
+      "value": 2
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_libert",
+      "value": 3
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_libert",
+      "value": 4
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_libert_qual",
+      "value": 5
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_sudame",
+      "value": 6
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_sudame",
+      "value": 7
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_sudame",
+      "value": 8
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_sudame",
+      "value": 9
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_sudame",
+      "value": 10
+    },
+    {
+      "id": 1737,
+      "tag": "info_label_slot_sudame",
+      "value": 11
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1735,
+      "when": "start",
+      "description": "FillFromLeague",
+      "param1": 1737,
+      "param2": 353,
+      "param3": 0,
+      "param4": 0
+    },
+    {
+      "id": 1735,
+      "when": "start",
+      "description": "ClearLeagueStats",
+      "param1": 1736,
+      "param2": 353,
+      "param3": 0,
+      "param4": 0
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 1,
+      "param4": 1
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 2,
+      "param4": 2
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 3,
+      "param4": 3
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 4,
+      "param4": 4
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 5,
+      "param4": 5
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 6,
+      "param4": 6
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 7,
+      "param4": 7
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 8,
+      "param4": 8
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 9,
+      "param4": 9
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 10,
+      "param4": 10
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 11,
+      "param4": 11
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 12,
+      "param4": 12
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 13,
+      "param4": 13
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1735,
+      "param2": 1737,
+      "param3": 14,
+      "param4": 14
+    },
+    {
+      "id": 1735,
+      "when": "end",
+      "description": "UpdateLeagueStats",
+      "param1": 1736,
+      "param2": 353,
+      "param3": 0,
+      "param4": 0
+    }
+  ],
+  "schedule": [
+    {
+      "id": 1736,
+      "day": 27,
+      "round": 1,
+      "min": 1,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 27,
+      "round": 1,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 27,
+      "round": 1,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 28,
+      "round": 1,
+      "min": 1,
+      "max": 2,
+      "time": 1600
+    },
+    {
+      "id": 1736,
+      "day": 28,
+      "round": 1,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 28,
+      "round": 1,
+      "min": 1,
+      "max": 1,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 29,
+      "round": 1,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 29,
+      "round": 1,
+      "min": 3,
+      "max": 5,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 34,
+      "round": 2,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 34,
+      "round": 2,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 35,
+      "round": 2,
+      "min": 2,
+      "max": 2,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 35,
+      "round": 2,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 35,
+      "round": 2,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 36,
+      "round": 2,
+      "min": 1,
+      "max": 1,
+      "time": 2005
+    },
+    {
+      "id": 1736,
+      "day": 36,
+      "round": 2,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 36,
+      "round": 2,
+      "min": 2,
+      "max": 3,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 41,
+      "round": 3,
+      "min": 1,
+      "max": 2,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 41,
+      "round": 3,
+      "min": 2,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 41,
+      "round": 3,
+      "min": 1,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 42,
+      "round": 3,
+      "min": 1,
+      "max": 1,
+      "time": 1500
+    },
+    {
+      "id": 1736,
+      "day": 42,
+      "round": 3,
+      "min": 1,
+      "max": 1,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 42,
+      "round": 3,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 43,
+      "round": 3,
+      "min": 1,
+      "max": 1,
+      "time": 2005
+    },
+    {
+      "id": 1736,
+      "day": 43,
+      "round": 3,
+      "min": 1,
+      "max": 3,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 43,
+      "round": 3,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 48,
+      "round": 4,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 48,
+      "round": 4,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 48,
+      "round": 4,
+      "min": 2,
+      "max": 3,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 48,
+      "round": 4,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 49,
+      "round": 4,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 49,
+      "round": 4,
+      "min": 1,
+      "max": 1,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 49,
+      "round": 4,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 50,
+      "round": 4,
+      "min": 1,
+      "max": 1,
+      "time": 2005
+    },
+    {
+      "id": 1736,
+      "day": 50,
+      "round": 4,
+      "min": 2,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 50,
+      "round": 4,
+      "min": 0,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 55,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 55,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 55,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 56,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 56,
+      "round": 5,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 56,
+      "round": 5,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 56,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 56,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 57,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 2005
+    },
+    {
+      "id": 1736,
+      "day": 57,
+      "round": 5,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 57,
+      "round": 5,
+      "min": 2,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 57,
+      "round": 5,
+      "min": 0,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 62,
+      "round": 6,
+      "min": 1,
+      "max": 2,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 62,
+      "round": 6,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 62,
+      "round": 6,
+      "min": 1,
+      "max": 2,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 62,
+      "round": 6,
+      "min": 1,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 63,
+      "round": 6,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 63,
+      "round": 6,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 63,
+      "round": 6,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 63,
+      "round": 6,
+      "min": 0,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 69,
+      "round": 7,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 69,
+      "round": 7,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 69,
+      "round": 7,
+      "min": 1,
+      "max": 2,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 69,
+      "round": 7,
+      "min": 1,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 70,
+      "round": 7,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 70,
+      "round": 7,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 70,
+      "round": 7,
+      "min": 0,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 70,
+      "round": 7,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 70,
+      "round": 7,
+      "min": 0,
+      "max": 1,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 83,
+      "round": 8,
+      "min": 1,
+      "max": 2,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 83,
+      "round": 8,
+      "min": 1,
+      "max": 2,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 84,
+      "round": 8,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 84,
+      "round": 8,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 84,
+      "round": 8,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 84,
+      "round": 8,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 85,
+      "round": 8,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 85,
+      "round": 8,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 85,
+      "round": 8,
+      "min": 0,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 90,
+      "round": 9,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 90,
+      "round": 9,
+      "min": 1,
+      "max": 2,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 90,
+      "round": 9,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 90,
+      "round": 9,
+      "min": 1,
+      "max": 2,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 91,
+      "round": 9,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 91,
+      "round": 9,
+      "min": 0,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 91,
+      "round": 9,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 91,
+      "round": 9,
+      "min": 1,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 97,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 97,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 97,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 2005
+    },
+    {
+      "id": 1736,
+      "day": 97,
+      "round": 10,
+      "min": 2,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 98,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 98,
+      "round": 10,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 98,
+      "round": 10,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 98,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 98,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 98,
+      "round": 10,
+      "min": 0,
+      "max": 1,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 99,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 99,
+      "round": 10,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 99,
+      "round": 10,
+      "min": 0,
+      "max": 1,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 101,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 101,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 101,
+      "round": 11,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 101,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 101,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 101,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 101,
+      "round": 11,
+      "min": 0,
+      "max": 1,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 102,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 102,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 102,
+      "round": 11,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 102,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 2005
+    },
+    {
+      "id": 1736,
+      "day": 102,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 102,
+      "round": 11,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 102,
+      "round": 11,
+      "min": 0,
+      "max": 1,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 104,
+      "round": 12,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 104,
+      "round": 12,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 104,
+      "round": 12,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 104,
+      "round": 12,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 104,
+      "round": 12,
+      "min": 1,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 105,
+      "round": 12,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 105,
+      "round": 12,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 105,
+      "round": 12,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 105,
+      "round": 12,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 105,
+      "round": 12,
+      "min": 1,
+      "max": 3,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 111,
+      "round": 13,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 111,
+      "round": 13,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 111,
+      "round": 13,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 111,
+      "round": 13,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 112,
+      "round": 13,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 112,
+      "round": 13,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 112,
+      "round": 13,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 112,
+      "round": 13,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 113,
+      "round": 13,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 113,
+      "round": 13,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 113,
+      "round": 13,
+      "min": 2,
+      "max": 3,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 118,
+      "round": 14,
+      "min": 1,
+      "max": 2,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 118,
+      "round": 14,
+      "min": 2,
+      "max": 3,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 118,
+      "round": 14,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 119,
+      "round": 14,
+      "min": 1,
+      "max": 2,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 119,
+      "round": 14,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 119,
+      "round": 14,
+      "min": 2,
+      "max": 3,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 119,
+      "round": 14,
+      "min": 2,
+      "max": 3,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 125,
+      "round": 15,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 125,
+      "round": 15,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 125,
+      "round": 15,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 126,
+      "round": 15,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 126,
+      "round": 15,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 126,
+      "round": 15,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 126,
+      "round": 15,
+      "min": 1,
+      "max": 1,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 127,
+      "round": 15,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 127,
+      "round": 15,
+      "min": 2,
+      "max": 2,
+      "time": 1905
+    },
+    {
+      "id": 1736,
+      "day": 127,
+      "round": 15,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 127,
+      "round": 15,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 132,
+      "round": 16,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 132,
+      "round": 16,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 132,
+      "round": 16,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 133,
+      "round": 16,
+      "min": 1,
+      "max": 2,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 133,
+      "round": 16,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 133,
+      "round": 16,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 133,
+      "round": 16,
+      "min": 1,
+      "max": 1,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 134,
+      "round": 16,
+      "min": 2,
+      "max": 3,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 134,
+      "round": 16,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 139,
+      "round": 17,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 139,
+      "round": 17,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 139,
+      "round": 17,
+      "min": 1,
+      "max": 3,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 140,
+      "round": 17,
+      "min": 2,
+      "max": 4,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 140,
+      "round": 17,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 140,
+      "round": 17,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 144,
+      "round": 18,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 144,
+      "round": 18,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 144,
+      "round": 18,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 144,
+      "round": 18,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 145,
+      "round": 18,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 145,
+      "round": 18,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 145,
+      "round": 18,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 145,
+      "round": 18,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 146,
+      "round": 18,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 146,
+      "round": 18,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 154,
+      "round": 19,
+      "min": 1,
+      "max": 2,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 154,
+      "round": 19,
+      "min": 1,
+      "max": 2,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 155,
+      "round": 19,
+      "min": 1,
+      "max": 2,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 155,
+      "round": 19,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 155,
+      "round": 19,
+      "min": 0,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 155,
+      "round": 19,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 155,
+      "round": 19,
+      "min": 1,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 155,
+      "round": 19,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 160,
+      "round": 20,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 160,
+      "round": 20,
+      "min": 3,
+      "max": 3,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 160,
+      "round": 20,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 161,
+      "round": 20,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 161,
+      "round": 20,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 161,
+      "round": 20,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 162,
+      "round": 20,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 171,
+      "round": 21,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 171,
+      "round": 21,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 171,
+      "round": 21,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 171,
+      "round": 21,
+      "min": 1,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 171,
+      "round": 21,
+      "min": 2,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 172,
+      "round": 21,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 172,
+      "round": 21,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 172,
+      "round": 21,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 172,
+      "round": 21,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 172,
+      "round": 21,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 2,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 2,
+      "time": 1605
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 225,
+      "round": 22,
+      "min": 1,
+      "max": 3,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 0,
+      "max": 1,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 1,
+      "time": 2005
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 1,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 2,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 247,
+      "round": 23,
+      "min": 1,
+      "max": 3,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 1,
+      "time": 5
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 1,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 2,
+      "time": 1715
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 1,
+      "time": 2000
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 1,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 2,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 258,
+      "round": 24,
+      "min": 1,
+      "max": 2,
+      "time": 2315
+    },
+    {
+      "id": 1736,
+      "day": 335,
+      "round": 25,
+      "min": 1,
+      "max": 2,
+      "time": 1905
+    },
+    {
+      "id": 1736,
+      "day": 335,
+      "round": 25,
+      "min": 1,
+      "max": 3,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 335,
+      "round": 25,
+      "min": 1,
+      "max": 2,
+      "time": 2100
+    },
+    {
+      "id": 1736,
+      "day": 335,
+      "round": 25,
+      "min": 2,
+      "max": 2,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 335,
+      "round": 25,
+      "min": 1,
+      "max": 2,
+      "time": 2205
+    },
+    {
+      "id": 1736,
+      "day": 335,
+      "round": 25,
+      "min": 2,
+      "max": 4,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 339,
+      "round": 26,
+      "min": 1,
+      "max": 1,
+      "time": 1505
+    },
+    {
+      "id": 1736,
+      "day": 339,
+      "round": 26,
+      "min": 1,
+      "max": 1,
+      "time": 1605
+    },
+    {
+      "id": 1736,
+      "day": 339,
+      "round": 26,
+      "min": 1,
+      "max": 2,
+      "time": 1705
+    },
+    {
+      "id": 1736,
+      "day": 339,
+      "round": 26,
+      "min": 1,
+      "max": 2,
+      "time": 1915
+    },
+    {
+      "id": 1736,
+      "day": 339,
+      "round": 26,
+      "min": 4,
+      "max": 4,
+      "time": 2105
+    },
+    {
+      "id": 1736,
+      "day": 339,
+      "round": 26,
+      "min": 3,
+      "max": 5,
+      "time": 2305
+    },
+    {
+      "id": 1736,
+      "day": 343,
+      "round": 27,
+      "min": 14,
+      "max": 14,
+      "time": 1800
+    },
+    {
+      "id": 1736,
+      "day": 347,
+      "round": 28,
+      "min": 0,
+      "max": 16,
+      "time": 1800
+    }
+  ],
+  "advancement": [],
+  "objectives": [
+    {
+      "id": 1737,
+      "objective": "CHAMPION",
+      "value": 1
+    },
+    {
+      "id": 1737,
+      "objective": "FIGHT_FOR_TITLE",
+      "value": 4
+    },
+    {
+      "id": 1737,
+      "objective": "HIGH_FINISH",
+      "value": 8
+    },
+    {
+      "id": 1737,
+      "objective": "MID_TABLE",
+      "value": 18
+    },
+    {
+      "id": 1737,
+      "objective": "AVOID_LOWLY_FINISH",
+      "value": 24
+    }
+  ],
+  "standings": [
+    {
+      "id": 1737,
+      "position": 0
+    },
+    {
+      "id": 1737,
+      "position": 1
+    },
+    {
+      "id": 1737,
+      "position": 2
+    },
+    {
+      "id": 1737,
+      "position": 3
+    },
+    {
+      "id": 1737,
+      "position": 4
+    },
+    {
+      "id": 1737,
+      "position": 5
+    },
+    {
+      "id": 1737,
+      "position": 6
+    },
+    {
+      "id": 1737,
+      "position": 7
+    },
+    {
+      "id": 1737,
+      "position": 8
+    },
+    {
+      "id": 1737,
+      "position": 9
+    },
+    {
+      "id": 1737,
+      "position": 10
+    },
+    {
+      "id": 1737,
+      "position": 11
+    },
+    {
+      "id": 1737,
+      "position": 12
+    },
+    {
+      "id": 1737,
+      "position": 13
+    },
+    {
+      "id": 1737,
+      "position": 14
+    },
+    {
+      "id": 1737,
+      "position": 15
+    },
+    {
+      "id": 1737,
+      "position": 16
+    },
+    {
+      "id": 1737,
+      "position": 17
+    },
+    {
+      "id": 1737,
+      "position": 18
+    },
+    {
+      "id": 1737,
+      "position": 19
+    },
+    {
+      "id": 1737,
+      "position": 20
+    },
+    {
+      "id": 1737,
+      "position": 21
+    },
+    {
+      "id": 1737,
+      "position": 22
+    },
+    {
+      "id": 1737,
+      "position": 23
+    },
+    {
+      "id": 1737,
+      "position": 24
+    },
+    {
+      "id": 1737,
+      "position": 25
+    },
+    {
+      "id": 1737,
+      "position": 26
+    },
+    {
+      "id": 1737,
+      "position": 27
+    }
+  ],
+  "initteams": [
+    {
+      "id": 1735,
+      "finishpos": 0,
+      "teamid": 1876
+    },
+    {
+      "id": 1735,
+      "finishpos": 1,
+      "teamid": 111710
+    },
+    {
+      "id": 1735,
+      "finishpos": 2,
+      "teamid": 112670
+    },
+    {
+      "id": 1735,
+      "finishpos": 3,
+      "teamid": 1877
+    },
+    {
+      "id": 1735,
+      "finishpos": 4,
+      "teamid": 101088
+    },
+    {
+      "id": 1735,
+      "finishpos": 5,
+      "teamid": 110404
+    },
+    {
+      "id": 1735,
+      "finishpos": 6,
+      "teamid": 111711
+    },
+    {
+      "id": 1735,
+      "finishpos": 7,
+      "teamid": 110093
+    },
+    {
+      "id": 1735,
+      "finishpos": 8,
+      "teamid": 110395
+    },
+    {
+      "id": 1735,
+      "finishpos": 9,
+      "teamid": 101084
+    },
+    {
+      "id": 1735,
+      "finishpos": 10,
+      "teamid": 111716
+    },
+    {
+      "id": 1735,
+      "finishpos": 11,
+      "teamid": 111022
+    },
+    {
+      "id": 1735,
+      "finishpos": 12,
+      "teamid": 111019
+    },
+    {
+      "id": 1735,
+      "finishpos": 13,
+      "teamid": 101085
+    }
+  ]
+}

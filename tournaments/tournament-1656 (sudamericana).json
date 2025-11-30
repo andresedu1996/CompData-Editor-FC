@@ -1,0 +1,3513 @@
+{
+  "meta": {
+    "rootId": 1656,
+    "name": "TrophyName_Abbr15_1014",
+    "exportedAt": "2025-11-30T02:08:55.424Z"
+  },
+  "compobj": [
+    {
+      "line": 1656,
+      "level": 3,
+      "shortname": "C1014",
+      "longname": "TrophyName_Abbr15_1014",
+      "parent": 1593
+    },
+    {
+      "line": 1657,
+      "level": 4,
+      "shortname": "S1",
+      "longname": "FCE_Setup_Stage",
+      "parent": 1656
+    },
+    {
+      "line": 1658,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1657
+    },
+    {
+      "line": 1659,
+      "level": 5,
+      "shortname": "G2",
+      "longname": " ",
+      "parent": 1657
+    },
+    {
+      "line": 1660,
+      "level": 4,
+      "shortname": "S3",
+      "longname": " ",
+      "parent": 1656
+    },
+    {
+      "line": 1661,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1660
+    },
+    {
+      "line": 1662,
+      "level": 4,
+      "shortname": "S4",
+      "longname": " ",
+      "parent": 1656
+    },
+    {
+      "line": 1663,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1664,
+      "level": 5,
+      "shortname": "G2",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1665,
+      "level": 5,
+      "shortname": "G3",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1666,
+      "level": 5,
+      "shortname": "G4",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1667,
+      "level": 5,
+      "shortname": "G5",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1668,
+      "level": 5,
+      "shortname": "G6",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1669,
+      "level": 5,
+      "shortname": "G7",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1670,
+      "level": 5,
+      "shortname": "G8",
+      "longname": " ",
+      "parent": 1662
+    },
+    {
+      "line": 1671,
+      "level": 4,
+      "shortname": "S6",
+      "longname": "FCE_Group_Stage",
+      "parent": 1656
+    },
+    {
+      "line": 1672,
+      "level": 5,
+      "shortname": "G1",
+      "longname": "FCE_Group_A",
+      "parent": 1671
+    },
+    {
+      "line": 1673,
+      "level": 5,
+      "shortname": "G2",
+      "longname": "FCE_Group_B",
+      "parent": 1671
+    },
+    {
+      "line": 1674,
+      "level": 5,
+      "shortname": "G3",
+      "longname": "FCE_Group_C",
+      "parent": 1671
+    },
+    {
+      "line": 1675,
+      "level": 5,
+      "shortname": "G4",
+      "longname": "FCE_Group_D",
+      "parent": 1671
+    },
+    {
+      "line": 1676,
+      "level": 5,
+      "shortname": "G5",
+      "longname": "FCE_Group_E",
+      "parent": 1671
+    },
+    {
+      "line": 1677,
+      "level": 5,
+      "shortname": "G6",
+      "longname": "FCE_Group_F",
+      "parent": 1671
+    },
+    {
+      "line": 1678,
+      "level": 5,
+      "shortname": "G7",
+      "longname": "FCE_Group_G",
+      "parent": 1671
+    },
+    {
+      "line": 1679,
+      "level": 5,
+      "shortname": "G8",
+      "longname": "FCE_Group_H",
+      "parent": 1671
+    },
+    {
+      "line": 1680,
+      "level": 4,
+      "shortname": "S7",
+      "longname": "FCE_Round_of_16_Playoffs_Draw",
+      "parent": 1656
+    },
+    {
+      "line": 1681,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1680
+    },
+    {
+      "line": 1682,
+      "level": 5,
+      "shortname": "G2",
+      "longname": "FCE_Group_Stage_3rd_Place_Teams",
+      "parent": 1680
+    },
+    {
+      "line": 1683,
+      "level": 4,
+      "shortname": "S8",
+      "longname": "FCE_Round_of_16_Playoffs",
+      "parent": 1656
+    },
+    {
+      "line": 1684,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1685,
+      "level": 5,
+      "shortname": "G2",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1686,
+      "level": 5,
+      "shortname": "G3",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1687,
+      "level": 5,
+      "shortname": "G4",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1688,
+      "level": 5,
+      "shortname": "G5",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1689,
+      "level": 5,
+      "shortname": "G6",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1690,
+      "level": 5,
+      "shortname": "G7",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1691,
+      "level": 5,
+      "shortname": "G8",
+      "longname": " ",
+      "parent": 1683
+    },
+    {
+      "line": 1692,
+      "level": 4,
+      "shortname": "S9",
+      "longname": "FCE_Round_of_16_Draw",
+      "parent": 1656
+    },
+    {
+      "line": 1693,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1692
+    },
+    {
+      "line": 1694,
+      "level": 5,
+      "shortname": "G2",
+      "longname": "FCE_Preliminary_Round_Winners",
+      "parent": 1692
+    },
+    {
+      "line": 1695,
+      "level": 4,
+      "shortname": "S10",
+      "longname": "FCE_Round_of_16",
+      "parent": 1656
+    },
+    {
+      "line": 1696,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1697,
+      "level": 5,
+      "shortname": "G2",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1698,
+      "level": 5,
+      "shortname": "G3",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1699,
+      "level": 5,
+      "shortname": "G4",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1700,
+      "level": 5,
+      "shortname": "G5",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1701,
+      "level": 5,
+      "shortname": "G6",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1702,
+      "level": 5,
+      "shortname": "G7",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1703,
+      "level": 5,
+      "shortname": "G8",
+      "longname": " ",
+      "parent": 1695
+    },
+    {
+      "line": 1704,
+      "level": 4,
+      "shortname": "S11",
+      "longname": "FCE_Quarter_Finals_Draw",
+      "parent": 1656
+    },
+    {
+      "line": 1705,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1704
+    },
+    {
+      "line": 1706,
+      "level": 4,
+      "shortname": "S12",
+      "longname": "FCE_Quarter_Finals",
+      "parent": 1656
+    },
+    {
+      "line": 1707,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1706
+    },
+    {
+      "line": 1708,
+      "level": 5,
+      "shortname": "G2",
+      "longname": " ",
+      "parent": 1706
+    },
+    {
+      "line": 1709,
+      "level": 5,
+      "shortname": "G3",
+      "longname": " ",
+      "parent": 1706
+    },
+    {
+      "line": 1710,
+      "level": 5,
+      "shortname": "G4",
+      "longname": " ",
+      "parent": 1706
+    },
+    {
+      "line": 1711,
+      "level": 4,
+      "shortname": "S13",
+      "longname": "FCE_Semi-Finals_Draw",
+      "parent": 1656
+    },
+    {
+      "line": 1712,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1711
+    },
+    {
+      "line": 1713,
+      "level": 4,
+      "shortname": "S14",
+      "longname": "FCE_Semi_Finals",
+      "parent": 1656
+    },
+    {
+      "line": 1714,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1713
+    },
+    {
+      "line": 1715,
+      "level": 5,
+      "shortname": "G2",
+      "longname": " ",
+      "parent": 1713
+    },
+    {
+      "line": 1716,
+      "level": 4,
+      "shortname": "S15",
+      "longname": "FCE_Final",
+      "parent": 1656
+    },
+    {
+      "line": 1717,
+      "level": 5,
+      "shortname": "G1",
+      "longname": " ",
+      "parent": 1716
+    }
+  ],
+  "settings": [
+    {
+      "id": 1656,
+      "tag": "advance_teamcompdependency",
+      "value": 1596
+    },
+    {
+      "id": 1656,
+      "tag": "asset_id",
+      "value": 1014
+    },
+    {
+      "id": 1656,
+      "tag": "comp_type",
+      "value": "CUP"
+    },
+    {
+      "id": 1656,
+      "tag": "match_matchimportance",
+      "value": 80
+    },
+    {
+      "id": 1656,
+      "tag": "schedule_seasonstartmonth",
+      "value": "JAN"
+    },
+    {
+      "id": 1656,
+      "tag": "schedule_year_start",
+      "value": 2024
+    },
+    {
+      "id": 1656,
+      "tag": "schedule_year_offset",
+      "value": 1
+    },
+    {
+      "id": 1656,
+      "tag": "nation_id",
+      "value": 0
+    },
+    {
+      "id": 1656,
+      "tag": "match_endruleko2leg1",
+      "value": "END"
+    },
+    {
+      "id": 1656,
+      "tag": "match_endruleko2leg2",
+      "value": "AGG"
+    },
+    {
+      "id": 1656,
+      "tag": "match_endruleko2leg2",
+      "value": "PENS"
+    },
+    {
+      "id": 1656,
+      "tag": "schedule_internationaldependency",
+      "value": "NONE"
+    },
+    {
+      "id": 1657,
+      "tag": "match_stagetype",
+      "value": "SETUP"
+    },
+    {
+      "id": 1659,
+      "tag": "standings_sort",
+      "value": "COUNTRY"
+    },
+    {
+      "id": 1659,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1660,
+      "tag": "match_stagetype",
+      "value": "SETUP"
+    },
+    {
+      "id": 1660,
+      "tag": "standings_sort",
+      "value": "COUNTRY"
+    },
+    {
+      "id": 1661,
+      "tag": "standings_sort",
+      "value": "COUNTRY"
+    },
+    {
+      "id": 1662,
+      "tag": "match_stagetype",
+      "value": "SETUP"
+    },
+    {
+      "id": 1663,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1664,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1665,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1666,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1667,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1668,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1669,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1670,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1671,
+      "tag": "match_stagetype",
+      "value": "LEAGUE"
+    },
+    {
+      "id": 1671,
+      "tag": "match_matchsituation",
+      "value": "GROUP"
+    },
+    {
+      "id": 1671,
+      "tag": "info_prize_money",
+      "value": 500000
+    },
+    {
+      "id": 1671,
+      "tag": "info_prize_money_drop",
+      "value": 50
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_stage_draw_date",
+      "value": 87
+    },
+    {
+      "id": 1671,
+      "tag": "standings_sort",
+      "value": "POINTS"
+    },
+    {
+      "id": 1671,
+      "tag": "standings_sort",
+      "value": "GOALDIFF"
+    },
+    {
+      "id": 1671,
+      "tag": "standings_sort",
+      "value": "GOALSFOR"
+    },
+    {
+      "id": 1671,
+      "tag": "standings_sort",
+      "value": "GOALSAWAY"
+    },
+    {
+      "id": 1671,
+      "tag": "standings_sort",
+      "value": "TEAMRATING"
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_matchup_behavior",
+      "value": "CUSTOM"
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 2
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 402
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 301
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 203
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 104
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 201
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 403
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 302
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 401
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 102
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 304
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 103
+    },
+    {
+      "id": 1671,
+      "tag": "schedule_custom_matchup_behavior",
+      "value": 204
+    },
+    {
+      "id": 1672,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1673,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1674,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1675,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1676,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1677,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1678,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1679,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1680,
+      "tag": "match_stagetype",
+      "value": "SETUP"
+    },
+    {
+      "id": 1680,
+      "tag": "advance_randomdraw",
+      "value": 1
+    },
+    {
+      "id": 1683,
+      "tag": "match_matchsituation",
+      "value": "ROUNDX"
+    },
+    {
+      "id": 1683,
+      "tag": "advance_random_draw_event",
+      "value": 1
+    },
+    {
+      "id": 1683,
+      "tag": "rule_allowadditionalsub",
+      "value": "on"
+    },
+    {
+      "id": 1683,
+      "tag": "schedule_stage_draw_date",
+      "value": 155
+    },
+    {
+      "id": 1683,
+      "tag": "match_stagetype",
+      "value": "KO2LEGS"
+    },
+    {
+      "id": 1684,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1685,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1686,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1687,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1688,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1689,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1690,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1691,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1692,
+      "tag": "match_stagetype",
+      "value": "SETUP"
+    },
+    {
+      "id": 1692,
+      "tag": "advance_randomdraw",
+      "value": 1
+    },
+    {
+      "id": 1695,
+      "tag": "match_stagetype",
+      "value": "KO2LEGS"
+    },
+    {
+      "id": 1695,
+      "tag": "match_matchsituation",
+      "value": "ROUND16"
+    },
+    {
+      "id": 1695,
+      "tag": "info_prize_money",
+      "value": 500000
+    },
+    {
+      "id": 1695,
+      "tag": "info_prize_money_drop",
+      "value": 50
+    },
+    {
+      "id": 1695,
+      "tag": "advance_random_draw_event",
+      "value": 1
+    },
+    {
+      "id": 1695,
+      "tag": "rule_allowadditionalsub",
+      "value": "on"
+    },
+    {
+      "id": 1695,
+      "tag": "schedule_stage_draw_date",
+      "value": 211
+    },
+    {
+      "id": 1696,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1697,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1698,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1699,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1700,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1701,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1702,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1703,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1704,
+      "tag": "match_stagetype",
+      "value": "SETUP"
+    },
+    {
+      "id": 1704,
+      "tag": "advance_randomdraw",
+      "value": 1
+    },
+    {
+      "id": 1706,
+      "tag": "match_stagetype",
+      "value": "KO2LEGS"
+    },
+    {
+      "id": 1706,
+      "tag": "match_matchsituation",
+      "value": "QUARTER"
+    },
+    {
+      "id": 1706,
+      "tag": "info_prize_money",
+      "value": 600000
+    },
+    {
+      "id": 1706,
+      "tag": "info_prize_money_drop",
+      "value": 50
+    },
+    {
+      "id": 1706,
+      "tag": "advance_random_draw_event",
+      "value": 1
+    },
+    {
+      "id": 1706,
+      "tag": "rule_allowadditionalsub",
+      "value": "on"
+    },
+    {
+      "id": 1706,
+      "tag": "schedule_stage_draw_date",
+      "value": 239
+    },
+    {
+      "id": 1707,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1708,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1709,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1710,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1711,
+      "tag": "match_stagetype",
+      "value": "SETUP"
+    },
+    {
+      "id": 1711,
+      "tag": "advance_randomdraw",
+      "value": 1
+    },
+    {
+      "id": 1713,
+      "tag": "match_stagetype",
+      "value": "KO2LEGS"
+    },
+    {
+      "id": 1713,
+      "tag": "match_matchsituation",
+      "value": "SEMI"
+    },
+    {
+      "id": 1713,
+      "tag": "info_prize_money",
+      "value": 800000
+    },
+    {
+      "id": 1713,
+      "tag": "info_prize_money_drop",
+      "value": 50
+    },
+    {
+      "id": 1713,
+      "tag": "advance_random_draw_event",
+      "value": 1
+    },
+    {
+      "id": 1713,
+      "tag": "rule_allowadditionalsub",
+      "value": "on"
+    },
+    {
+      "id": 1713,
+      "tag": "schedule_stage_draw_date",
+      "value": 274
+    },
+    {
+      "id": 1714,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1715,
+      "tag": "num_games",
+      "value": 2
+    },
+    {
+      "id": 1716,
+      "tag": "match_stagetype",
+      "value": "KO1LEG"
+    },
+    {
+      "id": 1716,
+      "tag": "match_matchsituation",
+      "value": "FINAL"
+    },
+    {
+      "id": 1716,
+      "tag": "info_prize_money",
+      "value": 4000000
+    },
+    {
+      "id": 1716,
+      "tag": "info_prize_money_drop",
+      "value": 50
+    },
+    {
+      "id": 1716,
+      "tag": "match_canusefancards",
+      "value": "on"
+    },
+    {
+      "id": 1716,
+      "tag": "match_matchimportance",
+      "value": 100
+    },
+    {
+      "id": 1716,
+      "tag": "rule_allowadditionalsub",
+      "value": "on"
+    },
+    {
+      "id": 1717,
+      "tag": "num_games",
+      "value": 1
+    },
+    {
+      "id": 1717,
+      "tag": "info_slot_champ",
+      "value": 1
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromLeagueMaxFromCountry",
+      "param1": 1658,
+      "param2": 7,
+      "param3": 6,
+      "param4": 6
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromLeagueMaxFromCountry",
+      "param1": 1658,
+      "param2": 353,
+      "param3": 6,
+      "param4": 6
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 53,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 55,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 56,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 57,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 58,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 59,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 60,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "start",
+      "description": "FillFromSpecialTeamsWithNation",
+      "param1": 1659,
+      "param2": 2,
+      "param3": 61,
+      "param4": 0
+    },
+    {
+      "id": 1656,
+      "when": "end",
+      "description": "UpdateTable",
+      "param1": 1656,
+      "param2": 1717,
+      "param3": 1,
+      "param4": 1
+    }
+  ],
+  "schedule": [
+    {
+      "id": 1671,
+      "day": 93,
+      "round": 1,
+      "min": 0,
+      "max": 6,
+      "time": 0
+    },
+    {
+      "id": 1671,
+      "day": 94,
+      "round": 1,
+      "min": 0,
+      "max": 6,
+      "time": 45
+    },
+    {
+      "id": 1671,
+      "day": 95,
+      "round": 1,
+      "min": 0,
+      "max": 4,
+      "time": 0
+    },
+    {
+      "id": 1671,
+      "day": 100,
+      "round": 2,
+      "min": 1,
+      "max": 6,
+      "time": 2230
+    },
+    {
+      "id": 1671,
+      "day": 101,
+      "round": 2,
+      "min": 2,
+      "max": 6,
+      "time": 30
+    },
+    {
+      "id": 1671,
+      "day": 102,
+      "round": 2,
+      "min": 0,
+      "max": 4,
+      "time": 0
+    },
+    {
+      "id": 1671,
+      "day": 114,
+      "round": 3,
+      "min": 1,
+      "max": 6,
+      "time": 2245
+    },
+    {
+      "id": 1671,
+      "day": 115,
+      "round": 3,
+      "min": 2,
+      "max": 6,
+      "time": 45
+    },
+    {
+      "id": 1671,
+      "day": 116,
+      "round": 3,
+      "min": 0,
+      "max": 4,
+      "time": 0
+    },
+    {
+      "id": 1671,
+      "day": 128,
+      "round": 4,
+      "min": 1,
+      "max": 6,
+      "time": 2215
+    },
+    {
+      "id": 1671,
+      "day": 129,
+      "round": 4,
+      "min": 2,
+      "max": 6,
+      "time": 45
+    },
+    {
+      "id": 1671,
+      "day": 130,
+      "round": 4,
+      "min": 0,
+      "max": 4,
+      "time": 0
+    },
+    {
+      "id": 1671,
+      "day": 135,
+      "round": 5,
+      "min": 0,
+      "max": 5,
+      "time": 0
+    },
+    {
+      "id": 1671,
+      "day": 136,
+      "round": 5,
+      "min": 0,
+      "max": 6,
+      "time": 45
+    },
+    {
+      "id": 1671,
+      "day": 136,
+      "round": 5,
+      "min": 0,
+      "max": 2,
+      "time": 2245
+    },
+    {
+      "id": 1671,
+      "day": 137,
+      "round": 5,
+      "min": 0,
+      "max": 3,
+      "time": 0
+    },
+    {
+      "id": 1671,
+      "day": 149,
+      "round": 6,
+      "min": 1,
+      "max": 6,
+      "time": 2245
+    },
+    {
+      "id": 1671,
+      "day": 150,
+      "round": 6,
+      "min": 2,
+      "max": 6,
+      "time": 45
+    },
+    {
+      "id": 1671,
+      "day": 151,
+      "round": 6,
+      "min": 0,
+      "max": 4,
+      "time": 0
+    },
+    {
+      "id": 1683,
+      "day": 198,
+      "round": 1,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1683,
+      "day": 199,
+      "round": 1,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1683,
+      "day": 200,
+      "round": 1,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1683,
+      "day": 205,
+      "round": 2,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1683,
+      "day": 206,
+      "round": 2,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1683,
+      "day": 207,
+      "round": 2,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1695,
+      "day": 226,
+      "round": 1,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1695,
+      "day": 227,
+      "round": 1,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1695,
+      "day": 228,
+      "round": 1,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1695,
+      "day": 233,
+      "round": 2,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1695,
+      "day": 234,
+      "round": 2,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1695,
+      "day": 235,
+      "round": 2,
+      "min": 0,
+      "max": 4,
+      "time": 45
+    },
+    {
+      "id": 1706,
+      "day": 261,
+      "round": 1,
+      "min": 0,
+      "max": 2,
+      "time": 45
+    },
+    {
+      "id": 1706,
+      "day": 262,
+      "round": 1,
+      "min": 0,
+      "max": 2,
+      "time": 45
+    },
+    {
+      "id": 1706,
+      "day": 263,
+      "round": 1,
+      "min": 0,
+      "max": 2,
+      "time": 45
+    },
+    {
+      "id": 1706,
+      "day": 268,
+      "round": 2,
+      "min": 0,
+      "max": 2,
+      "time": 45
+    },
+    {
+      "id": 1706,
+      "day": 269,
+      "round": 2,
+      "min": 0,
+      "max": 2,
+      "time": 45
+    },
+    {
+      "id": 1706,
+      "day": 270,
+      "round": 2,
+      "min": 0,
+      "max": 2,
+      "time": 45
+    },
+    {
+      "id": 1713,
+      "day": 296,
+      "round": 1,
+      "min": 0,
+      "max": 1,
+      "time": 45
+    },
+    {
+      "id": 1713,
+      "day": 297,
+      "round": 1,
+      "min": 0,
+      "max": 1,
+      "time": 45
+    },
+    {
+      "id": 1713,
+      "day": 298,
+      "round": 1,
+      "min": 0,
+      "max": 1,
+      "time": 45
+    },
+    {
+      "id": 1713,
+      "day": 303,
+      "round": 2,
+      "min": 0,
+      "max": 1,
+      "time": 45
+    },
+    {
+      "id": 1713,
+      "day": 304,
+      "round": 2,
+      "min": 0,
+      "max": 1,
+      "time": 45
+    },
+    {
+      "id": 1713,
+      "day": 305,
+      "round": 2,
+      "min": 0,
+      "max": 1,
+      "time": 45
+    },
+    {
+      "id": 1716,
+      "day": 328,
+      "round": 1,
+      "min": 1,
+      "max": 1,
+      "time": 45
+    }
+  ],
+  "advancement": [
+    {
+      "groupid": 1658,
+      "slot": 1,
+      "pushtocompetition": 1661,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1658,
+      "slot": 2,
+      "pushtocompetition": 1661,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1658,
+      "slot": 3,
+      "pushtocompetition": 1661,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1658,
+      "slot": 4,
+      "pushtocompetition": 1661,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1658,
+      "slot": 5,
+      "pushtocompetition": 1661,
+      "pushtoposition": 5
+    },
+    {
+      "groupid": 1658,
+      "slot": 6,
+      "pushtocompetition": 1661,
+      "pushtoposition": 6
+    },
+    {
+      "groupid": 1658,
+      "slot": 7,
+      "pushtocompetition": 1661,
+      "pushtoposition": 7
+    },
+    {
+      "groupid": 1658,
+      "slot": 8,
+      "pushtocompetition": 1661,
+      "pushtoposition": 8
+    },
+    {
+      "groupid": 1658,
+      "slot": 9,
+      "pushtocompetition": 1661,
+      "pushtoposition": 9
+    },
+    {
+      "groupid": 1658,
+      "slot": 10,
+      "pushtocompetition": 1661,
+      "pushtoposition": 10
+    },
+    {
+      "groupid": 1658,
+      "slot": 11,
+      "pushtocompetition": 1661,
+      "pushtoposition": 11
+    },
+    {
+      "groupid": 1658,
+      "slot": 12,
+      "pushtocompetition": 1661,
+      "pushtoposition": 12
+    },
+    {
+      "groupid": 1659,
+      "slot": 1,
+      "pushtocompetition": 1661,
+      "pushtoposition": 13
+    },
+    {
+      "groupid": 1659,
+      "slot": 2,
+      "pushtocompetition": 1661,
+      "pushtoposition": 14
+    },
+    {
+      "groupid": 1659,
+      "slot": 3,
+      "pushtocompetition": 1661,
+      "pushtoposition": 15
+    },
+    {
+      "groupid": 1659,
+      "slot": 4,
+      "pushtocompetition": 1661,
+      "pushtoposition": 16
+    },
+    {
+      "groupid": 1659,
+      "slot": 5,
+      "pushtocompetition": 1661,
+      "pushtoposition": 17
+    },
+    {
+      "groupid": 1659,
+      "slot": 6,
+      "pushtocompetition": 1661,
+      "pushtoposition": 18
+    },
+    {
+      "groupid": 1659,
+      "slot": 7,
+      "pushtocompetition": 1661,
+      "pushtoposition": 19
+    },
+    {
+      "groupid": 1659,
+      "slot": 8,
+      "pushtocompetition": 1661,
+      "pushtoposition": 20
+    },
+    {
+      "groupid": 1659,
+      "slot": 9,
+      "pushtocompetition": 1661,
+      "pushtoposition": 21
+    },
+    {
+      "groupid": 1659,
+      "slot": 10,
+      "pushtocompetition": 1661,
+      "pushtoposition": 22
+    },
+    {
+      "groupid": 1659,
+      "slot": 11,
+      "pushtocompetition": 1661,
+      "pushtoposition": 23
+    },
+    {
+      "groupid": 1659,
+      "slot": 12,
+      "pushtocompetition": 1661,
+      "pushtoposition": 24
+    },
+    {
+      "groupid": 1659,
+      "slot": 13,
+      "pushtocompetition": 1661,
+      "pushtoposition": 25
+    },
+    {
+      "groupid": 1659,
+      "slot": 14,
+      "pushtocompetition": 1661,
+      "pushtoposition": 26
+    },
+    {
+      "groupid": 1659,
+      "slot": 15,
+      "pushtocompetition": 1661,
+      "pushtoposition": 27
+    },
+    {
+      "groupid": 1659,
+      "slot": 16,
+      "pushtocompetition": 1661,
+      "pushtoposition": 28
+    },
+    {
+      "groupid": 1661,
+      "slot": 1,
+      "pushtocompetition": 1663,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 2,
+      "pushtocompetition": 1664,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 3,
+      "pushtocompetition": 1665,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 4,
+      "pushtocompetition": 1666,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 5,
+      "pushtocompetition": 1667,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 6,
+      "pushtocompetition": 1668,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 7,
+      "pushtocompetition": 1669,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 8,
+      "pushtocompetition": 1670,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1661,
+      "slot": 9,
+      "pushtocompetition": 1663,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 10,
+      "pushtocompetition": 1664,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 11,
+      "pushtocompetition": 1665,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 12,
+      "pushtocompetition": 1666,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 13,
+      "pushtocompetition": 1667,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 14,
+      "pushtocompetition": 1668,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 15,
+      "pushtocompetition": 1669,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 16,
+      "pushtocompetition": 1670,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1661,
+      "slot": 17,
+      "pushtocompetition": 1663,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 18,
+      "pushtocompetition": 1664,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 19,
+      "pushtocompetition": 1665,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 20,
+      "pushtocompetition": 1666,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 21,
+      "pushtocompetition": 1667,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 22,
+      "pushtocompetition": 1668,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 23,
+      "pushtocompetition": 1669,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 24,
+      "pushtocompetition": 1670,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1661,
+      "slot": 25,
+      "pushtocompetition": 1663,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1661,
+      "slot": 26,
+      "pushtocompetition": 1664,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1661,
+      "slot": 27,
+      "pushtocompetition": 1665,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1661,
+      "slot": 28,
+      "pushtocompetition": 1666,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1661,
+      "slot": 29,
+      "pushtocompetition": 1667,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1661,
+      "slot": 30,
+      "pushtocompetition": 1668,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1661,
+      "slot": 31,
+      "pushtocompetition": 1669,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1661,
+      "slot": 32,
+      "pushtocompetition": 1670,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1663,
+      "slot": 1,
+      "pushtocompetition": 1672,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1663,
+      "slot": 2,
+      "pushtocompetition": 1672,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1663,
+      "slot": 3,
+      "pushtocompetition": 1672,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1663,
+      "slot": 4,
+      "pushtocompetition": 1672,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1664,
+      "slot": 1,
+      "pushtocompetition": 1673,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1664,
+      "slot": 2,
+      "pushtocompetition": 1673,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1664,
+      "slot": 3,
+      "pushtocompetition": 1673,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1664,
+      "slot": 4,
+      "pushtocompetition": 1673,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1665,
+      "slot": 1,
+      "pushtocompetition": 1674,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1665,
+      "slot": 2,
+      "pushtocompetition": 1674,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1665,
+      "slot": 3,
+      "pushtocompetition": 1674,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1665,
+      "slot": 4,
+      "pushtocompetition": 1674,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1666,
+      "slot": 1,
+      "pushtocompetition": 1675,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1666,
+      "slot": 2,
+      "pushtocompetition": 1675,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1666,
+      "slot": 3,
+      "pushtocompetition": 1675,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1666,
+      "slot": 4,
+      "pushtocompetition": 1675,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1667,
+      "slot": 1,
+      "pushtocompetition": 1676,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1667,
+      "slot": 2,
+      "pushtocompetition": 1676,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1667,
+      "slot": 3,
+      "pushtocompetition": 1676,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1667,
+      "slot": 4,
+      "pushtocompetition": 1676,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1668,
+      "slot": 1,
+      "pushtocompetition": 1677,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1668,
+      "slot": 2,
+      "pushtocompetition": 1677,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1668,
+      "slot": 3,
+      "pushtocompetition": 1677,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1668,
+      "slot": 4,
+      "pushtocompetition": 1677,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1669,
+      "slot": 1,
+      "pushtocompetition": 1678,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1669,
+      "slot": 2,
+      "pushtocompetition": 1678,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1669,
+      "slot": 3,
+      "pushtocompetition": 1678,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1669,
+      "slot": 4,
+      "pushtocompetition": 1678,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1670,
+      "slot": 1,
+      "pushtocompetition": 1679,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1670,
+      "slot": 2,
+      "pushtocompetition": 1679,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1670,
+      "slot": 3,
+      "pushtocompetition": 1679,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1670,
+      "slot": 4,
+      "pushtocompetition": 1679,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1672,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1672,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1673,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1673,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1674,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1674,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1675,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1675,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1676,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 5
+    },
+    {
+      "groupid": 1676,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 5
+    },
+    {
+      "groupid": 1677,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 6
+    },
+    {
+      "groupid": 1677,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 6
+    },
+    {
+      "groupid": 1678,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 7
+    },
+    {
+      "groupid": 1678,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 7
+    },
+    {
+      "groupid": 1679,
+      "slot": 1,
+      "pushtocompetition": 1693,
+      "pushtoposition": 8
+    },
+    {
+      "groupid": 1679,
+      "slot": 2,
+      "pushtocompetition": 1681,
+      "pushtoposition": 8
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1684,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1685,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1686,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1687,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1688,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1689,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1690,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1681,
+      "slot": 0,
+      "pushtocompetition": 1691,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1684,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1685,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1686,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1687,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1688,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1689,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1690,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1682,
+      "slot": 0,
+      "pushtocompetition": 1691,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1684,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1685,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1686,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1687,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1688,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 5
+    },
+    {
+      "groupid": 1689,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 6
+    },
+    {
+      "groupid": 1690,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 7
+    },
+    {
+      "groupid": 1691,
+      "slot": 1,
+      "pushtocompetition": 1694,
+      "pushtoposition": 8
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1696,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1697,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1698,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1699,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1700,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1701,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1702,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1693,
+      "slot": 0,
+      "pushtocompetition": 1703,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1696,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1697,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1698,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1699,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1700,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1701,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1702,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1694,
+      "slot": 0,
+      "pushtocompetition": 1703,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1696,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1697,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1698,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1699,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1700,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 5
+    },
+    {
+      "groupid": 1701,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 6
+    },
+    {
+      "groupid": 1702,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 7
+    },
+    {
+      "groupid": 1703,
+      "slot": 1,
+      "pushtocompetition": 1705,
+      "pushtoposition": 8
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1707,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1707,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1708,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1708,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1709,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1709,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1710,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1705,
+      "slot": 0,
+      "pushtocompetition": 1710,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1707,
+      "slot": 1,
+      "pushtocompetition": 1712,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1708,
+      "slot": 1,
+      "pushtocompetition": 1712,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1709,
+      "slot": 1,
+      "pushtocompetition": 1712,
+      "pushtoposition": 3
+    },
+    {
+      "groupid": 1710,
+      "slot": 1,
+      "pushtocompetition": 1712,
+      "pushtoposition": 4
+    },
+    {
+      "groupid": 1712,
+      "slot": 0,
+      "pushtocompetition": 1714,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1712,
+      "slot": 0,
+      "pushtocompetition": 1714,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1712,
+      "slot": 0,
+      "pushtocompetition": 1715,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1712,
+      "slot": 0,
+      "pushtocompetition": 1715,
+      "pushtoposition": 2
+    },
+    {
+      "groupid": 1714,
+      "slot": 1,
+      "pushtocompetition": 1717,
+      "pushtoposition": 1
+    },
+    {
+      "groupid": 1715,
+      "slot": 1,
+      "pushtocompetition": 1717,
+      "pushtoposition": 2
+    }
+  ],
+  "objectives": [
+    {
+      "id": 1696,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1697,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1698,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1699,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1700,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1701,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1702,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1703,
+      "objective": "REACH_ROUND_OF_16",
+      "value": 0
+    },
+    {
+      "id": 1707,
+      "objective": "REACH_QUARTER_FINALS",
+      "value": 0
+    },
+    {
+      "id": 1708,
+      "objective": "REACH_QUARTER_FINALS",
+      "value": 0
+    },
+    {
+      "id": 1709,
+      "objective": "REACH_QUARTER_FINALS",
+      "value": 0
+    },
+    {
+      "id": 1710,
+      "objective": "REACH_QUARTER_FINALS",
+      "value": 0
+    },
+    {
+      "id": 1714,
+      "objective": "REACH_SEMI_FINALS",
+      "value": 0
+    },
+    {
+      "id": 1715,
+      "objective": "REACH_SEMI_FINALS",
+      "value": 0
+    },
+    {
+      "id": 1717,
+      "objective": "CHAMPION",
+      "value": 1
+    },
+    {
+      "id": 1717,
+      "objective": "REACH_FINALS",
+      "value": 0
+    }
+  ],
+  "standings": [
+    {
+      "id": 1658,
+      "position": 0
+    },
+    {
+      "id": 1658,
+      "position": 1
+    },
+    {
+      "id": 1658,
+      "position": 2
+    },
+    {
+      "id": 1658,
+      "position": 3
+    },
+    {
+      "id": 1658,
+      "position": 4
+    },
+    {
+      "id": 1658,
+      "position": 5
+    },
+    {
+      "id": 1658,
+      "position": 6
+    },
+    {
+      "id": 1658,
+      "position": 7
+    },
+    {
+      "id": 1658,
+      "position": 8
+    },
+    {
+      "id": 1658,
+      "position": 9
+    },
+    {
+      "id": 1658,
+      "position": 10
+    },
+    {
+      "id": 1658,
+      "position": 11
+    },
+    {
+      "id": 1659,
+      "position": 0
+    },
+    {
+      "id": 1659,
+      "position": 1
+    },
+    {
+      "id": 1659,
+      "position": 2
+    },
+    {
+      "id": 1659,
+      "position": 3
+    },
+    {
+      "id": 1659,
+      "position": 4
+    },
+    {
+      "id": 1659,
+      "position": 5
+    },
+    {
+      "id": 1659,
+      "position": 6
+    },
+    {
+      "id": 1659,
+      "position": 7
+    },
+    {
+      "id": 1659,
+      "position": 8
+    },
+    {
+      "id": 1659,
+      "position": 9
+    },
+    {
+      "id": 1659,
+      "position": 10
+    },
+    {
+      "id": 1659,
+      "position": 11
+    },
+    {
+      "id": 1659,
+      "position": 12
+    },
+    {
+      "id": 1659,
+      "position": 13
+    },
+    {
+      "id": 1659,
+      "position": 14
+    },
+    {
+      "id": 1659,
+      "position": 15
+    },
+    {
+      "id": 1661,
+      "position": 0
+    },
+    {
+      "id": 1661,
+      "position": 1
+    },
+    {
+      "id": 1661,
+      "position": 2
+    },
+    {
+      "id": 1661,
+      "position": 3
+    },
+    {
+      "id": 1661,
+      "position": 4
+    },
+    {
+      "id": 1661,
+      "position": 5
+    },
+    {
+      "id": 1661,
+      "position": 6
+    },
+    {
+      "id": 1661,
+      "position": 7
+    },
+    {
+      "id": 1661,
+      "position": 8
+    },
+    {
+      "id": 1661,
+      "position": 9
+    },
+    {
+      "id": 1661,
+      "position": 10
+    },
+    {
+      "id": 1661,
+      "position": 11
+    },
+    {
+      "id": 1661,
+      "position": 12
+    },
+    {
+      "id": 1661,
+      "position": 13
+    },
+    {
+      "id": 1661,
+      "position": 14
+    },
+    {
+      "id": 1661,
+      "position": 15
+    },
+    {
+      "id": 1661,
+      "position": 16
+    },
+    {
+      "id": 1661,
+      "position": 17
+    },
+    {
+      "id": 1661,
+      "position": 18
+    },
+    {
+      "id": 1661,
+      "position": 19
+    },
+    {
+      "id": 1661,
+      "position": 20
+    },
+    {
+      "id": 1661,
+      "position": 21
+    },
+    {
+      "id": 1661,
+      "position": 22
+    },
+    {
+      "id": 1661,
+      "position": 23
+    },
+    {
+      "id": 1661,
+      "position": 24
+    },
+    {
+      "id": 1661,
+      "position": 25
+    },
+    {
+      "id": 1661,
+      "position": 26
+    },
+    {
+      "id": 1661,
+      "position": 27
+    },
+    {
+      "id": 1661,
+      "position": 28
+    },
+    {
+      "id": 1661,
+      "position": 29
+    },
+    {
+      "id": 1661,
+      "position": 30
+    },
+    {
+      "id": 1661,
+      "position": 31
+    },
+    {
+      "id": 1663,
+      "position": 0
+    },
+    {
+      "id": 1663,
+      "position": 1
+    },
+    {
+      "id": 1663,
+      "position": 2
+    },
+    {
+      "id": 1663,
+      "position": 3
+    },
+    {
+      "id": 1664,
+      "position": 0
+    },
+    {
+      "id": 1664,
+      "position": 1
+    },
+    {
+      "id": 1664,
+      "position": 2
+    },
+    {
+      "id": 1664,
+      "position": 3
+    },
+    {
+      "id": 1665,
+      "position": 0
+    },
+    {
+      "id": 1665,
+      "position": 1
+    },
+    {
+      "id": 1665,
+      "position": 2
+    },
+    {
+      "id": 1665,
+      "position": 3
+    },
+    {
+      "id": 1666,
+      "position": 0
+    },
+    {
+      "id": 1666,
+      "position": 1
+    },
+    {
+      "id": 1666,
+      "position": 2
+    },
+    {
+      "id": 1666,
+      "position": 3
+    },
+    {
+      "id": 1667,
+      "position": 0
+    },
+    {
+      "id": 1667,
+      "position": 1
+    },
+    {
+      "id": 1667,
+      "position": 2
+    },
+    {
+      "id": 1667,
+      "position": 3
+    },
+    {
+      "id": 1668,
+      "position": 0
+    },
+    {
+      "id": 1668,
+      "position": 1
+    },
+    {
+      "id": 1668,
+      "position": 2
+    },
+    {
+      "id": 1668,
+      "position": 3
+    },
+    {
+      "id": 1669,
+      "position": 0
+    },
+    {
+      "id": 1669,
+      "position": 1
+    },
+    {
+      "id": 1669,
+      "position": 2
+    },
+    {
+      "id": 1669,
+      "position": 3
+    },
+    {
+      "id": 1670,
+      "position": 0
+    },
+    {
+      "id": 1670,
+      "position": 1
+    },
+    {
+      "id": 1670,
+      "position": 2
+    },
+    {
+      "id": 1670,
+      "position": 3
+    },
+    {
+      "id": 1672,
+      "position": 0
+    },
+    {
+      "id": 1672,
+      "position": 1
+    },
+    {
+      "id": 1672,
+      "position": 2
+    },
+    {
+      "id": 1672,
+      "position": 3
+    },
+    {
+      "id": 1673,
+      "position": 0
+    },
+    {
+      "id": 1673,
+      "position": 1
+    },
+    {
+      "id": 1673,
+      "position": 2
+    },
+    {
+      "id": 1673,
+      "position": 3
+    },
+    {
+      "id": 1674,
+      "position": 0
+    },
+    {
+      "id": 1674,
+      "position": 1
+    },
+    {
+      "id": 1674,
+      "position": 2
+    },
+    {
+      "id": 1674,
+      "position": 3
+    },
+    {
+      "id": 1675,
+      "position": 0
+    },
+    {
+      "id": 1675,
+      "position": 1
+    },
+    {
+      "id": 1675,
+      "position": 2
+    },
+    {
+      "id": 1675,
+      "position": 3
+    },
+    {
+      "id": 1676,
+      "position": 0
+    },
+    {
+      "id": 1676,
+      "position": 1
+    },
+    {
+      "id": 1676,
+      "position": 2
+    },
+    {
+      "id": 1676,
+      "position": 3
+    },
+    {
+      "id": 1677,
+      "position": 0
+    },
+    {
+      "id": 1677,
+      "position": 1
+    },
+    {
+      "id": 1677,
+      "position": 2
+    },
+    {
+      "id": 1677,
+      "position": 3
+    },
+    {
+      "id": 1678,
+      "position": 0
+    },
+    {
+      "id": 1678,
+      "position": 1
+    },
+    {
+      "id": 1678,
+      "position": 2
+    },
+    {
+      "id": 1678,
+      "position": 3
+    },
+    {
+      "id": 1679,
+      "position": 0
+    },
+    {
+      "id": 1679,
+      "position": 1
+    },
+    {
+      "id": 1679,
+      "position": 2
+    },
+    {
+      "id": 1679,
+      "position": 3
+    },
+    {
+      "id": 1681,
+      "position": 0
+    },
+    {
+      "id": 1681,
+      "position": 1
+    },
+    {
+      "id": 1681,
+      "position": 2
+    },
+    {
+      "id": 1681,
+      "position": 3
+    },
+    {
+      "id": 1681,
+      "position": 4
+    },
+    {
+      "id": 1681,
+      "position": 5
+    },
+    {
+      "id": 1681,
+      "position": 6
+    },
+    {
+      "id": 1681,
+      "position": 7
+    },
+    {
+      "id": 1682,
+      "position": 0
+    },
+    {
+      "id": 1682,
+      "position": 1
+    },
+    {
+      "id": 1682,
+      "position": 2
+    },
+    {
+      "id": 1682,
+      "position": 3
+    },
+    {
+      "id": 1682,
+      "position": 4
+    },
+    {
+      "id": 1682,
+      "position": 5
+    },
+    {
+      "id": 1682,
+      "position": 6
+    },
+    {
+      "id": 1682,
+      "position": 7
+    },
+    {
+      "id": 1684,
+      "position": 0
+    },
+    {
+      "id": 1684,
+      "position": 1
+    },
+    {
+      "id": 1685,
+      "position": 0
+    },
+    {
+      "id": 1685,
+      "position": 1
+    },
+    {
+      "id": 1686,
+      "position": 0
+    },
+    {
+      "id": 1686,
+      "position": 1
+    },
+    {
+      "id": 1687,
+      "position": 0
+    },
+    {
+      "id": 1687,
+      "position": 1
+    },
+    {
+      "id": 1688,
+      "position": 0
+    },
+    {
+      "id": 1688,
+      "position": 1
+    },
+    {
+      "id": 1689,
+      "position": 0
+    },
+    {
+      "id": 1689,
+      "position": 1
+    },
+    {
+      "id": 1690,
+      "position": 0
+    },
+    {
+      "id": 1690,
+      "position": 1
+    },
+    {
+      "id": 1691,
+      "position": 0
+    },
+    {
+      "id": 1691,
+      "position": 1
+    },
+    {
+      "id": 1693,
+      "position": 0
+    },
+    {
+      "id": 1693,
+      "position": 1
+    },
+    {
+      "id": 1693,
+      "position": 2
+    },
+    {
+      "id": 1693,
+      "position": 3
+    },
+    {
+      "id": 1693,
+      "position": 4
+    },
+    {
+      "id": 1693,
+      "position": 5
+    },
+    {
+      "id": 1693,
+      "position": 6
+    },
+    {
+      "id": 1693,
+      "position": 7
+    },
+    {
+      "id": 1694,
+      "position": 0
+    },
+    {
+      "id": 1694,
+      "position": 1
+    },
+    {
+      "id": 1694,
+      "position": 2
+    },
+    {
+      "id": 1694,
+      "position": 3
+    },
+    {
+      "id": 1694,
+      "position": 4
+    },
+    {
+      "id": 1694,
+      "position": 5
+    },
+    {
+      "id": 1694,
+      "position": 6
+    },
+    {
+      "id": 1694,
+      "position": 7
+    },
+    {
+      "id": 1696,
+      "position": 0
+    },
+    {
+      "id": 1696,
+      "position": 1
+    },
+    {
+      "id": 1697,
+      "position": 0
+    },
+    {
+      "id": 1697,
+      "position": 1
+    },
+    {
+      "id": 1698,
+      "position": 0
+    },
+    {
+      "id": 1698,
+      "position": 1
+    },
+    {
+      "id": 1699,
+      "position": 0
+    },
+    {
+      "id": 1699,
+      "position": 1
+    },
+    {
+      "id": 1700,
+      "position": 0
+    },
+    {
+      "id": 1700,
+      "position": 1
+    },
+    {
+      "id": 1701,
+      "position": 0
+    },
+    {
+      "id": 1701,
+      "position": 1
+    },
+    {
+      "id": 1702,
+      "position": 0
+    },
+    {
+      "id": 1702,
+      "position": 1
+    },
+    {
+      "id": 1703,
+      "position": 0
+    },
+    {
+      "id": 1703,
+      "position": 1
+    },
+    {
+      "id": 1705,
+      "position": 0
+    },
+    {
+      "id": 1705,
+      "position": 1
+    },
+    {
+      "id": 1705,
+      "position": 2
+    },
+    {
+      "id": 1705,
+      "position": 3
+    },
+    {
+      "id": 1705,
+      "position": 4
+    },
+    {
+      "id": 1705,
+      "position": 5
+    },
+    {
+      "id": 1705,
+      "position": 6
+    },
+    {
+      "id": 1705,
+      "position": 7
+    },
+    {
+      "id": 1707,
+      "position": 0
+    },
+    {
+      "id": 1707,
+      "position": 1
+    },
+    {
+      "id": 1708,
+      "position": 0
+    },
+    {
+      "id": 1708,
+      "position": 1
+    },
+    {
+      "id": 1709,
+      "position": 0
+    },
+    {
+      "id": 1709,
+      "position": 1
+    },
+    {
+      "id": 1710,
+      "position": 0
+    },
+    {
+      "id": 1710,
+      "position": 1
+    },
+    {
+      "id": 1712,
+      "position": 0
+    },
+    {
+      "id": 1712,
+      "position": 1
+    },
+    {
+      "id": 1712,
+      "position": 2
+    },
+    {
+      "id": 1712,
+      "position": 3
+    },
+    {
+      "id": 1714,
+      "position": 0
+    },
+    {
+      "id": 1714,
+      "position": 1
+    },
+    {
+      "id": 1715,
+      "position": 0
+    },
+    {
+      "id": 1715,
+      "position": 1
+    },
+    {
+      "id": 1717,
+      "position": 0
+    },
+    {
+      "id": 1717,
+      "position": 1
+    }
+  ],
+  "initteams": [
+    {
+      "id": 1656,
+      "finishpos": 0,
+      "teamid": 101085
+    }
+  ]
+}
